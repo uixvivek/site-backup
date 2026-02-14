@@ -8,19 +8,19 @@
 function initDarkMode() {
     const themeToggle = document.getElementById('themeToggle');
     const themeToggleMobile = document.getElementById('themeToggleMobile');
-    const body = document.body;
+    const html = document.documentElement;
 
     // Check for saved theme preference or default to light mode
     const currentTheme = localStorage.getItem('theme') || 'light';
     if (currentTheme === 'dark') {
-        body.classList.add('dark-mode');
+        html.classList.add('dark-mode');
     }
 
     // Sidebar theme toggle (index.html only)
     if (themeToggle) {
         themeToggle.addEventListener('click', () => {
-            body.classList.toggle('dark-mode');
-            const theme = body.classList.contains('dark-mode') ? 'dark' : 'light';
+            html.classList.toggle('dark-mode');
+            const theme = html.classList.contains('dark-mode') ? 'dark' : 'light';
             localStorage.setItem('theme', theme);
         });
     }
@@ -28,8 +28,8 @@ function initDarkMode() {
     // Mobile menu theme toggle (all pages)
     if (themeToggleMobile) {
         themeToggleMobile.addEventListener('click', () => {
-            body.classList.toggle('dark-mode');
-            const theme = body.classList.contains('dark-mode') ? 'dark' : 'light';
+            html.classList.toggle('dark-mode');
+            const theme = html.classList.contains('dark-mode') ? 'dark' : 'light';
             localStorage.setItem('theme', theme);
         });
     }
