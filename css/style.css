@@ -1452,11 +1452,6 @@ body.dark-mode .mobile-floating-btn:hover {
         display: none;
     }
 
-    /* Hide navbar theme toggle on mobile (use mobile menu one instead) */
-    .top-nav-links .theme-toggle {
-        display: none !important;
-    }
-
     /* Show theme toggle in mobile menu */
     .theme-toggle-mobile {
         display: inline-flex;
