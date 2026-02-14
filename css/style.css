@@ -701,7 +701,7 @@ body:has(.sidebar) .main-content {
 
 .blog-card-image {
     width: 100%;
-    height: 200px;
+    height: 300px;
     background: linear-gradient(135deg, var(--primary-blue), #55A0EB);
     display: flex;
     align-items: center;
@@ -761,6 +761,10 @@ body:has(.sidebar) .main-content {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.blog-card-footer .blog-card-meta {
+    margin-bottom: 0;
 }
 
 .blog-card-tags {
