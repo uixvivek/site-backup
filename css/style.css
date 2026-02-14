@@ -1622,12 +1622,12 @@ html.dark-mode body .mobile-floating-btn:hover {
 
     /* Article meta - smaller on mobile */
     .article-meta {
-        gap: 10px;
-        font-size: 10px;
+        gap: 12px;
+        font-size: 14px;
     }
 
     .article-meta span {
-        gap: 4px;
+        gap: 6px;
     }
 
     .mobile-floating-btn {
@@ -1667,4 +1667,5 @@ html.dark-mode body .mobile-floating-btn:hover {
         margin: 0;
         max-width: 100%;
     }
+
 }
