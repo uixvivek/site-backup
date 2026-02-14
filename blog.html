@@ -10,6 +10,7 @@
     <link rel="shortcut icon" href="favicon.png">
     <link rel="apple-touch-icon" href="favicon.png">
     <link rel="stylesheet" href="css/style.css">
+
     <script>
         window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
     </script>
@@ -19,16 +20,16 @@
 <body>
     <!-- Top Navigation Bar -->
     <nav class="top-nav">
-        <a href="index.html" class="top-nav-logo">uixvivek</a>
+        <a href="/" class="top-nav-logo">uixvivek</a>
         <button class="hamburger-menu" id="hamburgerMenu" aria-label="Toggle menu">
             <span></span>
             <span></span>
             <span></span>
         </button>
         <div class="top-nav-links" id="topNavLinks">
-            <a href="index.html" class="top-nav-link">Home</a>
-            <a href="blog.html" class="top-nav-link active">Blog</a>
-            <a href="featured-work.html" class="top-nav-link">Featured Work</a>
+            <a href="/" class="top-nav-link">Home</a>
+            <a href="/blog" class="top-nav-link active">Blog</a>
+            <a href="/featured-work" class="top-nav-link">Featured Work</a>
             <a href="#" class="top-nav-link" id="contactBtn">Say Hi👋</a>
             <!-- Dark Mode Toggle -->
             <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode"
@@ -79,7 +80,7 @@
             <!-- Sample Blog Card 1 -->
             <a href="blog-post-1.html" class="blog-card animate-on-scroll animate-delay-1">
                 <div class="blog-card-image">
-                    <img src="blog-images/blog1.png" alt="The Power of Simplicity in Product Design">
+                    <img src="assets/images/Blog/blog1.png" alt="The Power of Simplicity in Product Design">
                 </div>
 
                 <div class="blog-card-content">
@@ -112,89 +113,7 @@
     </button>
 
     <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
-    <script src="js/main.js" defer></script>
-    if (currentTheme === 'dark') {
-    body.classList.add('dark-mode');
-    }
+    <script src="js/main.js"></script>
+</body>
 
-    themeToggle.addEventListener('click', () => {
-    body.classList.toggle('dark-mode');
-
-    // Save theme preference
-    const theme = body.classList.contains('dark-mode') ? 'dark' : 'light';
-    localStorage.setItem('theme', theme);
-    });
-
-    // Hamburger Menu Toggle
-    const hamburgerMenu = document.getElementById('hamburgerMenu');
-    const topNavLinks = document.getElementById('topNavLinks');
-
-    hamburgerMenu.addEventListener('click', () => {
-    hamburgerMenu.classList.toggle('active');
-    topNavLinks.classList.toggle('active');
-    });
-
-    // Close menu when clicking a link
-    document.querySelectorAll('.top-nav-link').forEach(link => {
-    link.addEventListener('click', () => {
-    hamburgerMenu.classList.remove('active');
-    topNavLinks.classList.remove('active');
-    });
-    });
-
-    // Close menu when clicking outside
-    document.addEventListener('click', (e) => {
-    if (!hamburgerMenu.contains(e.target) && !topNavLinks.contains(e.target)) {
-    hamburgerMenu.classList.remove('active');
-    topNavLinks.classList.remove('active');
-    }
-    });
-
-    // Contact Modal Functionality
-    const contactBtn = document.getElementById('contactBtn');
-    const contactModal = document.getElementById('contactModal');
-    const closeModal = document.getElementById('closeModal');
-
-    if (contactBtn && contactModal && closeModal) {
-
-    // Open modal
-    contactBtn.addEventListener('click', (e) => {
-    e.preventDefault();
-    contactModal.classList.add('active');
-    document.body.style.overflow = 'hidden';
-    });
-    // Mobile Floating Button
-    const mobileContactBtn = document.getElementById('mobileContactBtn');
-
-    if (mobileContactBtn) {
-    mobileContactBtn.addEventListener('click', (e) => {
-    e.preventDefault();
-    contactModal.classList.add('active');
-    document.body.style.overflow = 'hidden';
-    });
-    }
-
-    // Close modal button
-    closeModal.addEventListener('click', () => {
-    contactModal.classList.remove('active');
-    document.body.style.overflow = '';
-    });
-
-    // Close when clicking outside
-    contactModal.addEventListener('click', (e) => {
-    if (e.target === contactModal) {
-    contactModal.classList.remove('active');
-    document.body.style.overflow = '';
-    }
-    });
-
-    // Close with Escape
-    document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && contactModal.classList.contains('active')) {
-    contactModal.classList.remove('active');
-    document.body.style.overflow = '';
-    }
-    });
-
-    }
-    </script>
+</html>
