@@ -98,6 +98,13 @@
                 <!-- Dark Mode Toggle -->
                 <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode"
                     style="position: static; width: 32px; height: 32px; margin-left: 10px;">
+                    <style>
+                        @media (max-width: 768px) {
+                            #themeToggle {
+                                display: none !important;
+                            }
+                        }
+                    </style>
                     <svg class="sun-icon" viewBox="0 0 24 24"
                         style="width: 16px; height: 16px; fill: var(--text-primary);">
                         <path
