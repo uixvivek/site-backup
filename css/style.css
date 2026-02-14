@@ -1454,18 +1454,25 @@ body.dark-mode .mobile-floating-btn:hover {
 
     /* Show theme toggle in mobile menu */
     .theme-toggle-mobile {
-        display: flex;
+        display: inline-flex;
         align-items: center;
         justify-content: center;
         gap: 10px;
-        background: transparent;
-        border: 1.5px solid var(--border-color);
+        background: rgba(255, 255, 255, 0.2);
+        /* Semi-transparent background like other pages */
+        border: 2px solid rgba(255, 255, 255, 0.3);
+        /* Subtle border */
         color: var(--text-primary);
-        padding: 12px 16px;
-        border-radius: 6px;
+        padding: 0;
+        border-radius: 50%;
+        /* Circular shape */
         cursor: pointer;
         order: -1;
-        width: 100%;
+        width: 36px;
+        /* Fixed width for circle */
+        height: 36px;
+        /* Fixed height for circle */
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
         transition: all 0.3s ease;
     }
 
@@ -1511,8 +1518,8 @@ body.dark-mode .mobile-floating-btn:hover {
     .main-content {
         margin-left: 0 !important;
         /* Force no left margin on mobile */
-        padding: 20px 10px;
-        /* Minimal padding */
+        padding: 20px 5px;
+        /* Reduced side padding for wider content */
         padding-top: 20px;
         width: 100% !important;
         /* Force full width */
