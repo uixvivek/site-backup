@@ -1452,6 +1452,11 @@ body.dark-mode .mobile-floating-btn:hover {
         display: none;
     }
 
+    /* Hide navbar theme toggle on mobile (use mobile menu one instead) */
+    .top-nav-links .theme-toggle {
+        display: none !important;
+    }
+
     /* Show theme toggle in mobile menu */
     .theme-toggle-mobile {
         display: inline-flex;
@@ -1518,8 +1523,8 @@ body.dark-mode .mobile-floating-btn:hover {
     .main-content {
         margin-left: 0 !important;
         /* Force no left margin on mobile */
-        padding: 20px 5px;
-        /* Reduced side padding for wider content */
+        padding: 20px;
+        /* Match navbar padding for consistent alignment */
         padding-top: 20px;
         width: 100% !important;
         /* Force full width */
