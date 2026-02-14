@@ -1525,17 +1525,22 @@ body.dark-mode .mobile-floating-btn:hover {
         /* Force full width */
     }
 
+    /* Resume Section - specific adjustments */
+    body:has(.resume-section) .main-content {
+        padding: 10px;
+        /* Reduce parent padding to bring card closer to edges */
+    }
+
     .resume-section {
-        padding: 30px 20px;
-        /* Better padding for readability */
+        padding: 25px 15px;
+        /* Slightly more compact internal padding */
         max-width: none;
-        /* Remove max-width on mobile */
-        width: calc(100% - 30px);
-        /* Leave space on sides */
-        margin: 15px;
-        /* Margin around the card */
-        border-radius: 12px;
-        /* Rounded corners like desktop */
+        width: 100%;
+        /* Take full width of parent (which has small padding) */
+        margin: 0;
+        /* Remove external margin */
+        border-radius: 4px;
+        /* User preference */
     }
 
     .blog-grid {
@@ -1627,12 +1632,35 @@ body.dark-mode .mobile-floating-btn:hover {
         justify-content: center;
     }
 
-    /* Back button - ensure visibility on mobile */
-    .back-button {
+    /* Mobile styles for Article Pages (Blog Post & Project) */
+    body:has(.article) {
+        background-color: var(--bg-card);
+    }
+
+    body:has(.article) .main-content {
+        padding: 0;
+        /* Remove default padding */
+        padding-top: 60px;
+        /* Just enough to clear the fixed navbar (50px) + 10px spac */
+        background: var(--bg-card);
+        /* Ensure white background (light mode) covers everything */
+    }
+
+    body:has(.article) .back-button {
         display: inline-flex !important;
-        margin-bottom: 20px;
-        margin-top: 70px;
-        /* Push below fixed navbar (50px) + spacing */
+        margin: 20px 18px 10px 18px;
+        /* Adjust spacing: top, right, bottom, left */
         font-size: 15px;
+    }
+
+    body:has(.article) .article {
+        padding: 0 18px 40px 18px;
+        /* Top: 0 (since back button provides space), Sides: 18px, Bottom: 40px */
+        border-radius: 0;
+        box-shadow: none;
+        background: transparent;
+        /* Transparent so it sits on the main-content background */
+        margin: 0;
+        max-width: 100%;
     }
 }
