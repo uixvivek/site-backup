@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Power of Simplicity in Product Design - Vivek Singh</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="shortcut icon" href="favicon.png">
+    <link rel="apple-touch-icon" href="favicon.png">
+    <link rel="stylesheet" href="css/style.css">
+    <script>
+  window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+</script>
+<script defer src="/_vercel/insights/script.js"></script>
+</head>
+
+<body>
+    <!-- Top Navigation Bar -->
+    <nav class="top-nav">
+        <a href="index.html" class="top-nav-logo">uixvivek</a>
+        <button class="hamburger-menu" id="hamburgerMenu" aria-label="Toggle menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <div class="top-nav-links" id="topNavLinks">
+            <a href="index.html" class="top-nav-link">Home</a>
+            <a href="blog.html" class="top-nav-link active">Blog</a>
+            <a href="featured-work.html" class="top-nav-link">Featured Work</a>
+            <a href="#" class="top-nav-link" id="contactBtn">Say Hi👋</a>
+            <!-- Dark Mode Toggle -->
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode"
+                style="position: static; width: 32px; height: 32px;">
+                <svg class="sun-icon" viewBox="0 0 24 24" style="width: 16px; height: 16px; fill: var(--text-primary);">
+                    <path
+                        d="M12 18C8.68629 18 6 15.3137 6 12C6 8.68629 8.68629 6 12 6C15.3137 6 18 8.68629 18 12C18 15.3137 15.3137 18 12 18ZM12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16ZM11 1H13V4H11V1ZM11 20H13V23H11V20ZM3.51472 4.92893L4.92893 3.51472L7.05025 5.63604L5.63604 7.05025L3.51472 4.92893ZM16.9497 18.364L18.364 16.9497L20.4853 19.0711L19.0711 20.4853L16.9497 18.364ZM19.0711 3.51472L20.4853 4.92893L18.364 7.05025L16.9497 5.63604L19.0711 3.51472ZM5.63604 16.9497L7.05025 18.364L4.92893 20.4853L3.51472 19.0711L5.63604 16.9497ZM23 11V13H20V11H23ZM4 11V13H1V11H4Z" />
+                </svg>
+                <svg class="moon-icon" viewBox="0 0 24 24"
+                    style="width: 16px; height: 16px; fill: var(--text-primary);">
+                    <path
+                        d="M10 7C10 10.866 13.134 14 17 14C18.9584 14 20.729 13.1957 21.9995 11.8995C22 11.933 22 11.9665 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C12.0335 2 12.067 2 12.1005 2.00049C10.8043 3.27098 10 5.04157 10 7ZM4 12C4 16.4183 7.58172 20 12 20C15.0583 20 17.7158 18.2839 19.062 15.7621C18.3945 15.9187 17.7035 16 17 16C12.0294 16 8 11.9706 8 7C8 6.29648 8.08133 5.60547 8.2379 4.938C5.71611 6.28423 4 8.9417 4 12Z" />
+                </svg>
+            </button>
+        </div>
+    </nav>
+    <!-- Contact Form Modal -->
+    <div class="modal" id="contactModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Get in Touch</h2>
+                <button class="close-btn" id="closeModal">&times;</button>
+            </div>
+            <form class="contact-form" action="https://formspree.io/f/xeelogpj" method="POST">
+                <div class="form-group">
+                    <label for="email">Your Email</label>
+                    <input type="email" id="email" name="email" placeholder="your.email@example.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="6" placeholder="Write your message here..."
+                        required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Send Message</button>
+                <div class="form-status" id="formStatus"></div>
+            </form>
+        </div>
+    </div>
+
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <a href="blog.html" class="back-button">← Back to Blog</a>
+
+        <article class="article">
+            <header class="article-header">
+                <div class="article-meta">
+                    <span>📅 February 8, 2026</span>
+                    <span>⏱️ 5 min read</span>
+                    <span>✍️ Vivek Singh</span>
+                </div>
+                <h1 class="article-title">The Power of Simplicity in Product Design</h1>
+                <div class="article-tags">
+                    <span class="article-tag">UX Design</span>
+                    <span class="article-tag">Product Thinking</span>
+                    <span class="article-tag">Design Philosophy</span>
+                </div>
+            </header>
+
+            <div class="article-content">
+                <p>In today's world, we're constantly bombarded with websites filled with animations, vibrant colors,
+                    and complex micro-interactions. As a product designer, I've learned that the most powerful design
+                    choice isn't always adding more, it's knowing when to hold back.</p>
+
+                <h2>Why I Built My Portfolio Simply</h2>
+
+                <p>When I was building my portfolio website, I had a choice: follow the trend of heavily animated,
+                    "award-winning" designs, or create something that truly serves its purpose. I chose the latter, and
+                    here's why.</p>
+
+                <h3>Restraint is a Design Skill</h3>
+
+                <p>The hardest thing for designers to learn isn't how to add features it's knowing what
+                    <strong>not</strong> to add. I could have made one super duper website, I mean vibe coded but that
+                    thing would just have stopped me to even create a simple one. I would have keep delaying just to get
+                    that perfect looking website. Anyways my portfolio has:
+                </p>
+
+                <ul>
+                    <li>Subtle animations that enhance rather than overwhelm</li>
+                    <li>A thoughtful dark mode showing care for accessibility</li>
+                    <li>Clean typography and clear hierarchy</li>
+                    <li>Purposeful micro-interactions on hover and scroll</li>
+                </ul>
+
+                <p>Each of these choices demonstrates maturity in design thinking. They show I understand that design
+                    isn't about showing off it's about solving problems.</p>
+
+                <blockquote>
+                    "Good design is as little design as possible." - Dieter Rams
+                </blockquote>
+
+                <h3>Flashy Websites Often Hurt More Than Help</h3>
+
+                <p>Many heavily animated portfolio sites suffer from critical issues:</p>
+
+                <ul>
+                    <li>Slow load times that frustrate users</li>
+                    <li>Poor accessibility that excludes people with disabilities</li>
+                    <li>Confusing navigation that hides important information</li>
+                    <li>Generic "Awwwards aesthetic" that looks like everyone else</li>
+                    <li>Content gets lost in the spectacle</li>
+                </ul>
+
+                <p>When you're applying for jobs or pitching to clients, they need to find your information quickly. A
+                    beautiful animation won't matter if they can't figure out how to contact you or see your work.</p>
+
+                <h2>Product Design Principles in Practice</h2>
+
+                <p>As a product designer, I focus on:</p>
+
+                <ol>
+                    <li><strong>User needs first</strong> - Recruiters need to find information quickly ✓</li>
+                    <li><strong>Usability over decoration</strong> - Every element serves a purpose ✓</li>
+                    <li><strong>Functional elegance</strong> - Beauty through simplicity ✓</li>
+                    <li><strong>Accessibility</strong> - Dark mode, readable fonts, clear contrast ✓</li>
+                </ol>
+
+                <p>My portfolio demonstrates these principles rather than just claiming them. It's a working example of
+                    my design philosophy.</p>
+
+                <h3>The Template Trap</h3>
+
+                <p>I could have used a Webflow or Framer template. Many do. But using someone else's design to showcase
+                    <em>your</em> design skills is contradictory. It's like:
+                </p>
+
+                <ul>
+                    <li>A chef serving frozen food at their audition</li>
+                    <li>An architect presenting someone else's building</li>
+                    <li>A musician playing only cover songs at their debut</li>
+                </ul>
+
+                <p>Building from scratch means I can explain every design decision, every choice, every problem I
+                    solved. That's infinitely more valuable in an interview than explaining why I chose Template #47.
+                </p>
+
+                <h2>What Makes Simple Design Stand Out</h2>
+
+                <p>Here's what a well-executed simple design achieves:</p>
+
+                <ul>
+                    <li><strong>Readable</strong> - People actually read the content</li>
+                    <li><strong>Fast</strong> - No waiting for heavy animations</li>
+                    <li><strong>Professional</strong> - Shows you understand business needs</li>
+                    <li><strong>Personal</strong> - Your choices show your thinking</li>
+                    <li><strong>Functional</strong> - Works on any device, any browser</li>
+                </ul>
+
+                <h2>Key Takeaways</h2>
+
+                <p>Whether you're building a portfolio, designing a product, or creating any user experience, remember:
+                </p>
+
+                <ol>
+                    <li>Know your user's primary goal and optimize for that</li>
+                    <li>Every element should serve a purpose-remove what doesn't</li>
+                    <li>Accessibility isn't optional-it's fundamental</li>
+                    <li>Your work should reflect your thinking, not someone else's template</li>
+                    <li>The best design is often invisible-it just works</li>
+                </ol>
+
+                <p>Simple doesn't mean easy. Creating something that feels effortless requires deep thought, careful
+                    consideration, and the courage to say "no" to trends that don't serve your users.</p>
+
+                <p>That's good design.</p>
+            </div>
+        </article>
+    </main>
+    <!-- Mobile Floating Button -->
+    <button id="mobileContactBtn" class="mobile-floating-btn" aria-label="Say Hi">
+        👋
+    </button>
+
+    <script src="js/main.js" defer></script>
