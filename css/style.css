@@ -480,6 +480,9 @@ body:has(.sidebar) .top-nav {
     transition: color 0.3s ease;
     order: -1;
     /* Ensure logo is first */
+    display: flex;
+    align-items: center;
+    height: 100%;
 }
 
 .top-nav-logo:hover {
@@ -1409,10 +1412,8 @@ html.dark-mode body .mobile-floating-btn:hover {
 
     .hamburger-menu {
         display: flex;
-        position: absolute;
-        top: 15px;
-        right: 20px;
-        /* Position on right side */
+        position: static;
+        margin: 0;
         z-index: 1001;
     }
 
@@ -1667,5 +1668,4 @@ html.dark-mode body .mobile-floating-btn:hover {
         margin: 0;
         max-width: 100%;
     }
-
 }
