@@ -1414,6 +1414,7 @@ html.dark-mode body .mobile-floating-btn:hover {
         display: flex;
         position: static;
         margin: 0;
+        margin-left: auto;
         z-index: 1001;
     }
 
