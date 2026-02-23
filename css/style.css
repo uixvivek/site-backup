@@ -36,6 +36,8 @@
 html {
   scroll-behavior: smooth;
   font-size: 16px;
+  /* Offset anchor scrolling so the fixed nav doesn't cover section titles */
+  scroll-padding-top: calc(var(--nav-height) + 3rem);
 }
 
 body {
@@ -268,6 +270,11 @@ button {
   margin-bottom: 1rem;
 }
 
+/* Hidden on desktop, shown on mobile */
+.hero__social-label {
+  display: none;
+}
+
 .hero__social a {
   transition: color 0.2s;
 }
@@ -460,14 +467,108 @@ button {
    RESPONSIVE
    -------------------------------------------------------------------------- */
 @media (max-width: 768px) {
+
+  /* --- Hero --- */
+  .hero {
+    padding-top: calc(var(--nav-height) + 3rem);
+    padding-bottom: 0;
+    text-align: center;
+  }
+
+  .hero__inner {
+    align-items: center;
+  }
+
+  .hero__badge {
+    margin-bottom: 2rem;
+  }
+
   .hero__name {
-    font-size: 4rem;
+    font-size: 3.5rem;
+    margin-bottom: 0.75rem;
+    line-height: 1.05;
   }
 
+  /* "Vivek" stays large; "Singh" is smaller and lighter */
+  .hero__name-first {
+    font-size: 1em;
+    /* inherits 3.5rem */
+    font-weight: 700;
+  }
+
+  .hero__name-last {
+    font-size: 0.55em;
+    /* ~1.9rem */
+    font-weight: 400;
+  }
+
+  .hero__tagline {
+    font-size: 0.9rem;
+    margin-bottom: 2rem;
+  }
+
+  .hero__actions {
+    margin-bottom: 5rem;
+  }
+
+  /* Social row: label far-left, icons far-right, sits above the divider */
+  .hero__social {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0;
+    margin-bottom: 0;
+  }
+
+  .hero__social-label {
+    display: block !important;
+    font-size: 0.75rem;
+    color: var(--color-text-muted);
+    white-space: nowrap;
+    margin-right: auto;
+  }
+
+  .hero__social-link {
+    margin-left: 0.5rem;
+  }
+
+  .hero__social-link svg {
+    width: 15px;
+    height: 15px;
+  }
+
+  /* Hide the label on desktop */
+  .hero__divider {
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  /* --- Work / Cards --- */
   .work__grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr !important;
+    gap: 1rem;
   }
 
+  .card {
+    height: 240px;
+  }
+
+  .card__title {
+    font-size: 1.1rem;
+  }
+
+  .card__content {
+    padding: 2.5rem 1rem 1rem 1rem;
+  }
+
+  /* --- Section title --- */
+  .section-title {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  /* --- About --- */
   .about__inner {
     grid-template-columns: 1fr;
     text-align: center;
@@ -482,7 +583,16 @@ button {
     transform: translateX(50%) rotate(0deg);
   }
 
+  /* Nav: match container padding so it aligns with content width */
+  .nav {
+    left: 2rem;
+    right: 2rem;
+  }
+}
 
+/* Hide social label on desktop — shown on mobile via media query above */
+
+@media (max-width: 768px) {
   .nav__links {
     display: none;
   }
@@ -518,4 +628,105 @@ button {
     padding: 1rem;
     text-align: center;
   }
+}
+
+/* ==========================================================================
+   MODAL & FORM
+   ========================================================================== */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.modal-overlay.is-active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal {
+  background: var(--color-bg);
+  width: 90%;
+  max-width: 480px;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  transform: translateY(20px);
+  transition: transform 0.3s ease;
+}
+
+.modal-overlay.is-active .modal {
+  transform: translateY(0);
+}
+
+.modal__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.modal__title {
+  font-family: var(--font-serif);
+  font-size: 1.75rem;
+  color: var(--color-text-primary);
+}
+
+.modal__close {
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  transition: color 0.2s;
+  background: none;
+  border: none;
+  padding: 4px;
+}
+
+.modal__close:hover {
+  color: var(--color-text-primary);
+}
+
+.form__group {
+  margin-bottom: 1.5rem;
+}
+
+.form__label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  color: var(--color-text-primary);
+}
+
+.form__input,
+.form__textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  color: var(--color-text-primary);
+  background: var(--color-bg);
+  transition: border-color 0.2s;
+}
+
+.form__input:focus,
+.form__textarea:focus {
+  outline: none;
+  border-color: var(--color-accent);
+}
+
+.form__textarea {
+  resize: vertical;
+  min-height: 120px;
 }
