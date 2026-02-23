@@ -14,10 +14,10 @@
   /* ------------------------------------------------------------------
      Element references
   ------------------------------------------------------------------ */
-  const nav          = document.getElementById('main-nav');
-  const hamburger    = document.getElementById('nav-hamburger');
-  const mobileMenu   = document.getElementById('nav-mobile-menu');
-  const mobileLinks  = document.querySelectorAll('.nav__mobile-link');
+  const nav = document.getElementById('main-nav');
+  const hamburger = document.getElementById('nav-hamburger');
+  const mobileMenu = document.getElementById('nav-mobile-menu');
+  const mobileLinks = document.querySelectorAll('.nav__mobile-link');
 
   /* ------------------------------------------------------------------
      1. HAMBURGER MENU TOGGLE
@@ -74,6 +74,47 @@
   window.addEventListener('resize', function () {
     if (window.innerWidth > 640) {
       closeMenu();
+    }
+  });
+
+  /* ------------------------------------------------------------------
+     5. CONTACT MODAL
+     Handle opening and closing the Formspree contact modal
+  ------------------------------------------------------------------ */
+  const modalOverlay = document.getElementById('contact-modal');
+  const openModalBtn = document.getElementById('open-contact-modal');
+  const closeModalBtn = document.getElementById('close-contact-modal');
+
+  function openModal() {
+    if (modalOverlay) {
+      modalOverlay.classList.add('is-active');
+      modalOverlay.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden'; // Prevent background scroll
+    }
+  }
+
+  function closeModal() {
+    if (modalOverlay) {
+      modalOverlay.classList.remove('is-active');
+      modalOverlay.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    }
+  }
+
+  if (openModalBtn) openModalBtn.addEventListener('click', openModal);
+  if (closeModalBtn) closeModalBtn.addEventListener('click', closeModal);
+
+  // Close modal when clicking on the overlay background
+  if (modalOverlay) {
+    modalOverlay.addEventListener('click', function (e) {
+      if (e.target === modalOverlay) closeModal();
+    });
+  }
+
+  // Close modal on Escape key press
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && modalOverlay && modalOverlay.classList.contains('is-active')) {
+      closeModal();
     }
   });
 
