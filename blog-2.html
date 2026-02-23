@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Blog — Vivek Singh</title>
-    <meta name="description" content="Portfolio of Vivek Singh — Blog" />
+    <title>Building a Scalable Design System — Vivek Singh</title>
+    <meta name="description" content="Lessons learned from auditing and rebuilding component libraries." />
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -68,54 +68,48 @@
     <!-- ====================================================================
        PAGE HEADER
   ===================================================================== -->
-    <section class="section" style="padding-top: calc(var(--nav-height) + 6rem); padding-bottom: 2rem;">
+    <section class="section" style="padding-top: calc(var(--nav-height) + 10rem); padding-bottom: 2rem;">
         <div class="container">
-            <h1 class="hero__name" style="font-size: 3.5rem; text-align: left; margin-bottom: 1rem;">Writings</h1>
-            <p class="hero__tagline" style="text-align: left;">Thoughts on design, development, and building products.
-            </p>
+            <h1 class="hero__name" style="font-size: 3rem; text-align: left; margin-bottom: 1rem; line-height: 1.2;">
+                Building a Scalable Design System</h1>
+            <p class="hero__tagline" style="text-align: left;">September 28, 2023</p>
         </div>
     </section>
 
     <!-- ====================================================================
-       BLOG LIST (Matching style)
+       CONTENT
   ===================================================================== -->
     <section class="section" style="padding-top: 0;">
         <div class="container">
-            <div style="display: flex; flex-direction: column; gap: 2rem;">
-
-                <!-- Post 1 -->
-                <article style="padding-bottom: 2rem; border-bottom: 1px solid var(--color-border);">
-                    <span
-                        style="color: var(--color-text-muted); font-size: 0.875rem; display: block; margin-bottom: 0.5rem;">October
-                        12, 2023</span>
-                    <h3 style="font-family: var(--font-serif); font-size: 1.5rem; margin-bottom: 0.5rem;">
-                        <a href="blog-1.html" style="color: var(--color-text-primary);">The Role of Micro-Interactions
-                            in
-                            Usability</a>
-                    </h3>
-                    <p style="color: var(--color-text-secondary); margin-bottom: 1rem;">Small details in product design
-                        can have a massive impact on the user's perception of quality.</p>
-                    <a href="blog-1.html"
-                        style="color: var(--color-accent); font-weight: 500; font-size: 0.875rem;">Read Article
-                        &rarr;</a>
-                </article>
-
-                <!-- Post 2 -->
-                <article style="padding-bottom: 2rem; border-bottom: 1px solid var(--color-border);">
-                    <span
-                        style="color: var(--color-text-muted); font-size: 0.875rem; display: block; margin-bottom: 0.5rem;">September
-                        28, 2023</span>
-                    <h3 style="font-family: var(--font-serif); font-size: 1.5rem; margin-bottom: 0.5rem;">
-                        <a href="blog-2.html" style="color: var(--color-text-primary);">Building a Scalable Design
-                            System</a>
-                    </h3>
-                    <p style="color: var(--color-text-secondary); margin-bottom: 1rem;">Lessons learned from auditing
-                        and rebuilding component libraries for enterprise applications.</p>
-                    <a href="blog-2.html"
-                        style="color: var(--color-accent); font-weight: 500; font-size: 0.875rem;">Read Article
-                        &rarr;</a>
-                </article>
-
+            <div style="max-width: 768px; color: var(--color-text-secondary); line-height: 1.8; font-size: 1.125rem;">
+                <p style="margin-bottom: 1.5rem;">As teams grow and products expand, maintaining visual consistency
+                    becomes increasingly difficult. We faced this challenge head-on when our enterprise application
+                    began accumulating hundreds of slightly varied buttons, disparate color hex codes, and inconsistent
+                    padding tokens.</p>
+                <p style="margin-bottom: 1.5rem;">The solution wasn't just to "design better," but to architect a
+                    system. A scalable design system acts as the single source of truth for both designers and
+                    developers. But building one is an exercise in restraint as much as creation.</p>
+                <h3
+                    style="font-family: var(--font-serif); font-size: 1.75rem; color: var(--color-text-primary); margin-top: 3rem; margin-bottom: 1rem;">
+                    Core Principles We Adopted</h3>
+                <ul style="list-style-type: disc; margin-left: 1.5rem; margin-bottom: 1.5rem;">
+                    <li style="margin-bottom: 0.5rem;"><strong>Start with Tokens, Not Components:</strong> Definining
+                        our underlying typography scales, color palettes, and spacing rules gave us a flexible
+                        foundation before touching a single button.</li>
+                    <li style="margin-bottom: 0.5rem;"><strong>Embrace Constraint:</strong> Restricting choices (e.g.,
+                        only 4 allowed margin sizes) dramatically reduces cognitive load and visual inconsistencies
+                        across screens.</li>
+                    <li style="margin-bottom: 0.5rem;"><strong>Documentation is the Product:</strong> A design system is
+                        only as good as its documentation. We invested heavily in documenting the "why" and "when"
+                        alongside the "what" of every component.</li>
+                </ul>
+                <p>The transition wasn't completely smooth. Adopting a strict system requires a cultural shift in how
+                    product teams collaborate. But the long-term velocity gains and the resulting cohesive user
+                    experience made the effort undeniably worthwhile.</p>
+                <div style="margin-top: 4rem;">
+                    <a href="blog.html" style="color: var(--color-accent); font-weight: 500;">&larr; Back to
+                        Writings</a>
+                </div>
             </div>
         </div>
     </section>

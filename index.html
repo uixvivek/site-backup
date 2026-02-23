@@ -2,348 +2,229 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vivek Singh - UX/UI Designer & Engineer</title>
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="assets/images/favicon.png">
-    <link rel="shortcut icon" href="assets/images/favicon.png">
-    <link rel="apple-touch-icon" href="assets/images/favicon.png">
-    <link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <script>
-        window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
-    </script>
-    <script defer src="/_vercel/insights/script.js"></script>
-    <script>
-        if (localStorage.getItem('theme') === 'dark') {
-            document.documentElement.classList.add('dark-mode');
-        }
-    </script>
+    <!-- SEO -->
+    <title>Vivek Singh — Product Designer</title>
+    <meta name="description" content="Portfolio of Vivek Singh — product designer crafting simple, usable products." />
+
+    <!-- Google Fonts: Inter (Sans) & Playfair Display (Serif) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+        rel="stylesheet" />
+
+    <!-- Main stylesheet -->
+    <link rel="stylesheet" href="css/style.css" />
+
+    <!-- Favicon -->
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%231a56db'/><text x='50%' y='54%' dominant-baseline='middle' text-anchor='middle' font-family='Inter,sans-serif' font-weight='700' font-size='18' fill='white'>VS</text></svg>" />
 </head>
 
-<body>
-    <div class="container">
-        <!-- Left Sidebar -->
-        <aside class="sidebar">
-            <h1>Vivek Singh</h1>
-            <p class="tagline">Product Designer</p>
+<body class="page-home">
 
-            <div class="profile-photo">
-                <img src="assets/images/profile.png" alt="Vivek Singh">
-            </div>
-            <p class="profile-one-liner">
-                I design simple, usable products & document the process.
-            </p>
+    <!-- ====================================================================
+       NAVIGATION
+  ===================================================================== -->
+    <nav class="nav" id="main-nav" role="navigation" aria-label="Main navigation">
+        <div class="container nav__inner">
 
+            <!-- Brand wordmark -->
+            <a href="#home" class="nav__logo" aria-label="Go to top">vs.</a>
 
-            <div class="social-icons">
-                <a href="https://linkedin.com/in/uixvivek" target="_blank" class="social-icon" title="LinkedIn">
-                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
-                        <path
-                            d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
-                    </svg>
-                </a>
+            <!-- Desktop links -->
+            <ul class="nav__links" role="list">
+                <li><a href="#home" class="nav__link active">Home</a></li>
+                <li><a href="#work" class="nav__link">Work</a></li>
+                <li><a href="#blog" class="nav__link">Blog</a></li>
+                <li>
+                    <a href="Vivek_Singh_Resume.pdf" download="Vivek_Singh_Resume.pdf" class="btn-primary nav__resume"
+                        aria-label="Download resume PDF">
+                        <!-- Download icon -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+                            aria-hidden="true">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                            <polyline points="7 10 12 15 17 10" />
+                            <line x1="12" y1="15" x2="12" y2="3" />
+                        </svg>
+                        Resume
+                    </a>
+                </li>
+            </ul>
 
-                <a href="https://www.instagram.com/uixvivek.in/" target="_blank" class="social-icon" title="Instagram">
-                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
-                        <path
-                            d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
-                    </svg>
-                </a>
-
-                <a href="mailto:contact@uixvivek.in" class="social-icon" title="Email">
-                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
-                        <path
-                            d="M0 3v18h24v-18h-24zm6.623 7.929l-4.623 5.712v-9.458l4.623 3.746zm-4.141-5.929h19.035l-9.517 7.713-9.518-7.713zm5.694 7.188l3.824 3.099 3.83-3.104 5.612 6.817h-18.779l5.513-6.812zm9.208-1.264l4.616-3.741v9.348l-4.616-5.607z" />
-                    </svg>
-                </a>
-
-                <a href="https://x.com/uix_vivek" target="_blank" class="social-icon" title="Twitter/X">
-                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
-                        <path
-                            d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-                    </svg>
-                </a>
-            </div>
-
-            <div class="cta-buttons">
-                <a href="https://drive.google.com/file/d/1LYNVDOfi4rjBul_E1R-YZnRh3HNHSzaG/view?usp=sharing"
-                    target="_blank" class="portfolio-btn">
-                    Portfolio
-                </a>
-                <a href="/blog" class="secondary-btn">
-                    Blog
-                </a>
-            </div>
-
-            <div class="about-section">
-                <h2>About Me</h2>
-                <p>I'm a B.Tech student at Delhi Skill and Entrepreneurship University with a passion for UX/UI design
-                    and product development. I combine technical engineering knowledge with user-centered design
-                    thinking to create meaningful digital experiences.</p>
-            </div>
-            <div class="sidebar-copyright">
-                © 2026 Vivek Singh. All rights reserved.
-            </div>
-        </aside>
-
-        <!-- Top Navigation Bar -->
-        <nav class="top-nav">
-            <button class="hamburger-menu" id="hamburgerMenu" aria-label="Toggle menu">
-                <span></span>
-                <span></span>
-                <span></span>
+            <!-- Hamburger button for mobile -->
+            <button class="nav__hamburger" id="nav-hamburger" aria-label="Toggle navigation menu" aria-expanded="false"
+                aria-controls="nav-mobile-menu">
+                <span class="nav__hamburger-bar"></span>
+                <span class="nav__hamburger-bar"></span>
+                <span class="nav__hamburger-bar"></span>
             </button>
-            <div class="top-nav-links" id="topNavLinks">
-                <a href="/" class="top-nav-link active">Home</a>
-                <a href="/blog" class="top-nav-link">Blog</a>
-                <a href="/work" class="top-nav-link">Work</a>
-                <a href="#" class="top-nav-link" id="contactBtn">Say Hi👋</a>
-                <!-- Dark Mode Toggle -->
-                <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode"
-                    style="position: static; width: 32px; height: 32px; margin-left: 10px;">
-                    <style>
-                        @media (max-width: 768px) {
-                            #themeToggle {
-                                display: none !important;
-                            }
-                        }
-                    </style>
-                    <svg class="sun-icon" viewBox="0 0 24 24"
-                        style="width: 16px; height: 16px; fill: var(--text-primary);">
-                        <path
-                            d="M12 18C8.68629 18 6 15.3137 6 12C6 8.68629 8.68629 6 12 6C15.3137 6 18 8.68629 18 12C18 15.3137 15.3137 18 12 18ZM12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16ZM11 1H13V4H11V1ZM11 20H13V23H11V20ZM3.51472 4.92893L4.92893 3.51472L7.05025 5.63604L5.63604 7.05025L3.51472 4.92893ZM16.9497 18.364L18.364 16.9497L20.4853 19.0711L19.0711 20.4853L16.9497 18.364ZM19.0711 3.51472L20.4853 4.92893L18.364 7.05025L16.9497 5.63604L19.0711 3.51472ZM5.63604 16.9497L7.05025 18.364L4.92893 20.4853L3.51472 19.0711L5.63604 16.9497ZM23 11V13H20V11H23ZM4 11V13H1V11H4Z" />
-                    </svg>
-                    <svg class="moon-icon" viewBox="0 0 24 24"
-                        style="width: 16px; height: 16px; fill: var(--text-primary);">
-                        <path
-                            d="M10 7C10 10.866 13.134 14 17 14C18.9584 14 20.729 13.1957 21.9995 11.8995C22 11.933 22 11.9665 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C12.0335 2 12.067 2 12.1005 2.00049C10.8043 3.27098 10 5.04157 10 7ZM4 12C4 16.4183 7.58172 20 12 20C15.0583 20 17.7158 18.2839 19.062 15.7621C18.3945 15.9187 17.7035 16 17 16C12.0294 16 8 11.9706 8 7C8 6.29648 8.08133 5.60547 8.2379 4.938C5.71611 6.28423 4 8.9417 4 12Z" />
-                    </svg>
-                </button>
-                <!-- Dark Mode Toggle in Menu -->
-                <button class="theme-toggle-mobile" id="themeToggleMobile" aria-label="Toggle dark mode">
-                    <svg class="sun-icon" viewBox="0 0 24 24">
-                        <path
-                            d="M12 18C8.68629 18 6 15.3137 6 12C6 8.68629 8.68629 6 12 6C15.3137 6 18 8.68629 18 12C18 15.3137 15.3137 18 12 18ZM12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16ZM11 1H13V4H11V1ZM11 20H13V23H11V20ZM3.51472 4.92893L4.92893 3.51472L7.05025 5.63604L5.63604 7.05025L3.51472 4.92893ZM16.9497 18.364L18.364 16.9497L20.4853 19.0711L19.0711 20.4853L16.9497 18.364ZM19.0711 3.51472L20.4853 4.92893L18.364 7.05025L16.9497 5.63604L19.0711 3.51472ZM5.63604 16.9497L7.05025 18.364L4.92893 20.4853L3.51472 19.0711L5.63604 16.9497ZM23 11V13H20V11H23ZM4 11V13H1V11H4Z" />
-                    </svg>
-                    <svg class="moon-icon" viewBox="0 0 24 24">
-                        <path
-                            d="M10 7C10 10.866 13.134 14 17 14C18.9584 14 20.729 13.1957 21.9995 11.8995C22 11.933 22 11.9665 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C12.0335 2 12.067 2 12.1005 2.00049C10.8043 3.27098 10 5.04157 10 7ZM4 12C4 16.4183 7.58172 20 12 20C15.0583 20 17.7158 18.2839 19.062 15.7621C18.3945 15.9187 17.7035 16 17 16C12.0294 16 8 11.9706 8 7C8 6.29648 8.08133 5.60547 8.2379 4.938C5.71611 6.28423 4 8.9417 4 12Z" />
-                    </svg>
-                </button>
-            </div>
-        </nav>
-
-        <!-- Contact Form Modal -->
-        <div class="modal" id="contactModal">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h2>Get in Touch</h2>
-                    <button class="close-btn" id="closeModal">&times;</button>
-                </div>
-                <form class="contact-form" action="https://formspree.io/f/xeelogpj" method="POST">
-                    <div class="form-group">
-                        <label for="email">Your Email</label>
-                        <input type="email" id="email" name="email" placeholder="your.email@example.com" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Message</label>
-                        <textarea id="message" name="message" rows="6" placeholder="Write your message here..."
-                            required></textarea>
-                    </div>
-                    <button type="submit" class="submit-btn">Send Message</button>
-                    <div class="form-status" id="formStatus"></div>
-                </form>
-            </div>
         </div>
 
-        <!-- Main Content -->
-        <main class="main-content">
-            <div class="resume-section">
+        <!-- Mobile slide-down drawer -->
+        <div class="nav__mobile-menu" id="nav-mobile-menu" role="menu">
+            <a href="#home" class="nav__mobile-link" role="menuitem">Home</a>
+            <a href="#work" class="nav__mobile-link" role="menuitem">Work</a>
+            <a href="#blog" class="nav__mobile-link" role="menuitem">Blog</a>
+            <div class="nav__mobile-resume">
+                <a href="Vivek_Singh_Resume.pdf" download="Vivek_Singh_Resume.pdf" class="btn-primary nav__mobile-link"
+                    style="justify-content:center;" role="menuitem">
+                    Download Resume
+                </a>
+            </div>
+        </div>
+    </nav>
 
-                <div style="display: flex; justify-content: flex-end; margin-bottom: 20px;">
-                    <a href="Vivek_Singh_Resume.pdf" class="download-cv-btn" download>
-                        <span class="download-icon">📄</span>
-                        <span>Download CV</span>
-                    </a>
-                </div>
+    <!-- ====================================================================
+       HERO SECTION
+  ===================================================================== -->
+    <section class="hero section" id="home">
+        <div class="container hero__inner">
+            <span class="hero__badge">Product Designer</span>
+            <h1 class="hero__name">Vivek Singh</h1>
+            <p class="hero__tagline">
+                I design simple, usable products and document the process.
+            </p>
 
-                <!-- Education -->
-                <h2 class="section-title animate-on-scroll">Education</h2>
+            <div class="hero__actions">
+                <a href="#work" class="btn-primary">View Work</a>
+                <a href="#contact" class="btn-outline">Say Hi !</a>
+            </div>
 
-                <div class="resume-item animate-on-scroll animate-delay-1">
-                    <div class="resume-item-header">
-                        <span class="resume-item-title">Delhi Skill and Entrepreneurship University</span>
-                        <span class="resume-item-date">August 2024 – June 2028</span>
+            <div class="hero__social">
+                <a href="https://www.linkedin.com/in/uixvivek" class="hero__social-link" aria-label="LinkedIn"
+                    target="_blank" rel="noopener">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                        <rect x="2" y="9" width="4" height="12" />
+                        <circle cx="4" cy="4" r="2" />
+                    </svg>
+                </a>
+                <a href="https://x.com/uix_vivek" class="hero__social-link" aria-label="X (Twitter)" target="_blank"
+                    rel="noopener">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M4 4l11.733 16h4.267l-11.733 -16z" />
+                        <path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772" />
+                    </svg>
+                </a>
+                <a href="https://www.instagram.com/uixvivek/" class="hero__social-link" aria-label="Instagram"
+                    target="_blank" rel="noopener">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                    </svg>
+                </a>
+                <a href="mailto:hello@uixvivek.in" class="hero__social-link" aria-label="Email">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <rect width="20" height="16" x="2" y="4" rx="2" />
+                        <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                    </svg>
+                </a>
+            </div>
+
+            <hr class="hero__divider" />
+        </div>
+    </section>
+
+    <!-- ====================================================================
+       WORK SECTION
+  ===================================================================== -->
+    <section class="work" id="work">
+        <div class="container">
+            <div class="work__header">
+                <h2 class="section-title" style="margin-bottom: 0;">Featured Work</h2>
+                <a href="work.html" class="work__view-all">View All</a>
+            </div>
+
+            <div class="work__grid">
+                <!-- Card 1 -->
+                <a href="https://drive.google.com/file/d/1rc0I6ckl2v_EeV6n0u9T7xMF_hltbjwA/view?usp=sharing"
+                    target="_blank" rel="noopener" class="card">
+                    <img src="images/IRCTC.png" alt="IRCTC Case Study" class="card__image" />
+                    <div class="card__content">
+                        <h3 class="card__title">IRCTC- Case Study</h3>
+                        <span class="card__arrow">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="1.5"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </span>
                     </div>
-                    <div class="resume-item-subtitle">B.Tech in Mechanical Engineering | New Delhi, India</div>
-                    <ul>
-                        <li>CGPA: 8.5/10</li>
-                        <li>Relevant Coursework: Engineering Mechanics, CAD/CAM, Product Design and Development,
-                            Manufacturing Processes</li>
-                    </ul>
-                </div>
+                </a>
 
-                <div class="resume-item animate-on-scroll animate-delay-2">
-                    <div class="resume-item-header">
-                        <span class="resume-item-title">Army Public School</span>
-                        <span class="resume-item-date">Graduated: 2023</span>
+                <!-- Card 2 -->
+                <a href="https://drive.google.com/file/d/1NNrrrkZ-zBHF_93Co7cL1Gw00vTu5wxu/view?usp=sharing"
+                    target="_blank" rel="noopener" class="card">
+                    <img src="images/DSEN.png" alt="DSEN Case Study" class="card__image" />
+                    <div class="card__content">
+                        <h3 class="card__title">DSEN- Case Study</h3>
+                        <span class="card__arrow">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="1.5"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </span>
                     </div>
-                    <div class="resume-item-subtitle">High School (CBSE) | Nashik, Maharashtra</div>
-                    <ul>
-                        <li>Percentage: 10th: 91.8%; 12th: 82%</li>
-                    </ul>
-                </div>
+                </a>
+            </div>
+        </div>
+    </section>
 
-                <!-- Technical Skills -->
-                <h2 class="section-title animate-on-scroll">Technical Skills</h2>
+    <!-- ====================================================================
+       ABOUT SECTION
+  ===================================================================== -->
+    <section class="about section" id="about">
+        <div class="container about__inner">
 
-                <div class="skills-grid">
-                    <div class="skill-item animate-on-scroll animate-delay-1"><strong>Design Tools:</strong> Figma,
-                        Framer</div>
-                    <div class="skill-item animate-on-scroll animate-delay-1"><strong>Video Editing:</strong> DaVinci
-                        Resolve</div>
-                    <div class="skill-item animate-on-scroll animate-delay-2"><strong>UX Skills:</strong> User Research,
-                        Information Architecture, Wireframing, Prototyping, Usability Thinking</div>
-                    <div class="skill-item animate-on-scroll animate-delay-3"><strong>Programming:</strong> Python
-                        (Pandas), HTML/CSS</div>
-                    <div class="skill-item animate-on-scroll animate-delay-4"><strong>Engineering:</strong> SolidWorks
-                    </div>
-                    <div class="skill-item animate-on-scroll animate-delay-5"><strong>Languages:</strong> English
-                        (Fluent), Hindi (Native)</div>
-                </div>
+            <div class="about__content">
+                <h2 class="about__title">About Me</h2>
+                <p class="about__bio">
+                    Get In!I'm a B.Tech student at Delhi Skill and Entrepreneurship University with a passion for UX/UI
+                    design and product development. I combine technical engineering knowledge with user-centered design
+                    thinking to create meaningful digital experiences.Touch
+                </p>
+                <a href="#blog" class="btn-primary btn-primary--white">
+                    Read Blogs
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round" style="margin-left: 4px;">
+                        <path d="M5 12h14"></path>
+                        <path d="m12 5 7 7-7 7"></path>
+                    </svg>
+                </a>
+            </div>
 
-                <!-- Projects -->
-                <h2 class="section-title animate-on-scroll">Projects</h2>
-
-                <div class="resume-item animate-on-scroll animate-delay-1">
-                    <div class="resume-item-header">
-                        <span class="resume-item-title">Delhi Students Economy Network (DSEN)</span>
-                        <span class="resume-item-date">September 2025 – December 2025</span>
-                    </div>
-                    <div class="resume-item-subtitle">Figma, Design Thinking</div>
-                    <ul>
-                        <li>Designed a mobile-first platform connecting local business owners with college students for
-                            micro-gigs and short-term work.</li>
-                        <li>Created and refined core user flows for both students and business owners (onboarding, gig
-                            creation, browsing, and task acceptance).</li>
-                        <li>Improved gig creation usability by introducing templated gig formats and AI-assisted input
-                            to reduce friction for non-technical users.</li>
-                    </ul>
-                </div>
-
-                <div class="resume-item animate-on-scroll animate-delay-2">
-                    <div class="resume-item-header">
-                        <span class="resume-item-title">Digital Content Creation (UX/UI Design)</span>
-                        <span class="resume-item-date">November 2025 – Present</span>
-                    </div>
-                    <div class="resume-item-subtitle">Instagram, LinkedIn</div>
-                    <ul>
-                        <li>Publish UX/UI case studies, design breakdowns, and Figma tutorials focused on practical
-                            usability improvements.</li>
-                        <li>Built an audience of 1.2k followers through consistent design communication (14 posts).</li>
-                    </ul>
-                </div>
-
-                <div class="resume-item animate-on-scroll animate-delay-3">
-                    <div class="resume-item-header">
-                        <span class="resume-item-title">Drone Leg Design</span>
-                        <span class="resume-item-date">September 2024 – December 2024</span>
-                    </div>
-                    <div class="resume-item-subtitle">SolidWorks, Material Science</div>
-                    <ul>
-                        <li>Designed drone landing gear for ISDC 2025, optimizing geometry for strength-to-weight
-                            performance.</li>
-                        <li>Researched suitable materials to reduce weight while maintaining durability.</li>
-                        <li>Modeled parts in SolidWorks and supported workshop manufacturing.</li>
-                    </ul>
-                </div>
-
-                <!-- Certifications & Events -->
-                <h2 class="section-title animate-on-scroll">Certifications & Events</h2>
-
-                <div class="resume-item animate-on-scroll animate-delay-1">
-                    <div class="resume-item-header">
-                        <span class="resume-item-title">Artificial Intelligence</span>
-                        <span class="resume-item-date">June 2025 – August 2025</span>
-                    </div>
-                    <div class="resume-item-subtitle">Infosys</div>
-                </div>
-
-                <div class="resume-item animate-on-scroll animate-delay-2">
-                    <div class="resume-item-header">
-                        <span class="resume-item-title">International Space Drone Challenge 2025</span>
-                        <span class="resume-item-date">Completed: January 2025</span>
-                    </div>
-                    <div class="resume-item-subtitle">SPROS</div>
-                </div>
-
-                <div class="resume-item animate-on-scroll animate-delay-3">
-                    <div class="resume-item-header">
-                        <span class="resume-item-title">Certificate of Recognition – DezShop (UX Virtual
-                            Workshop)</span>
-                        <span class="resume-item-date">September 2025</span>
-                    </div>
-                    <div class="resume-item-subtitle">DezHub India</div>
-                </div>
-
-                <div class="resume-item animate-on-scroll animate-delay-4">
-                    <div class="resume-item-header">
-                        <span class="resume-item-title">Design Talks (Attendee)</span>
-                        <span class="resume-item-date"></span>
-                    </div>
-                    <div class="resume-item-subtitle">Speakers from Microsoft (Product Design) and Gemini Solutions
-                        (UX/UI)</div>
-                </div>
-
-                <!-- Extracurricular Activities & Leadership -->
-                <h2 class="section-title animate-on-scroll">Extracurricular Activities & Leadership</h2>
-
-                <div class="resume-item animate-on-scroll animate-delay-1">
-                    <div class="resume-item-header">
-                        <span class="resume-item-title">Aerospace Club Member</span>
-                        <span class="resume-item-date">August 2024 – December 2024</span>
-                    </div>
-                    <div class="resume-item-subtitle">Delhi Skill and Entrepreneurship University</div>
-                    <ul>
-                        <li>Collaborated with team members to design and build a drone for competition use-cases.</li>
-                        <li>Participated in International Space Drone Challenge 2025; team secured 6th position.</li>
-                    </ul>
-                </div>
-
-                <div class="resume-item animate-on-scroll animate-delay-2">
-                    <div class="resume-item-header">
-                        <span class="resume-item-title">National Cadet Corps (NCC)</span>
-                        <span class="resume-item-date">2019 – 2020</span>
-                    </div>
-                    <div class="resume-item-subtitle">Army Public School Devlali</div>
-                    <ul>
-                        <li>Completed NCC training focused on discipline, teamwork, and leadership.</li>
-                        <li>Earned NCC "A" Certificate (A+); attended Annual Training Camp.</li>
-                    </ul>
-                </div>
-
-                <div class="resume-item animate-on-scroll animate-delay-3">
-                    <div class="resume-item-header">
-                        <span class="resume-item-title">Senior Sports Captain</span>
-                        <span class="resume-item-date">2022 – 2023</span>
-                    </div>
-                    <div class="resume-item-subtitle">Army Public School Devlali</div>
-                    <ul>
-                        <li>Led student teams for inter-house sports events and managed coordination.</li>
-                    </ul>
+            <div class="about__photo-wrapper">
+                <div class="about__polaroid">
+                    <img src="images/profile.png" alt="Vivek Singh" class="about__image"
+                        onerror="this.style.display='none';" />
                 </div>
             </div>
-        </main>
-    </div>
 
-    <!-- Mobile Floating Button -->
-    <button id="mobileContactBtn" class="mobile-floating-btn" aria-label="Say Hi">
-        👋
-    </button>
+        </div>
+    </section>
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+    <!-- ====================================================================
+       FOOTER
+  ===================================================================== -->
+    <footer class="footer" id="contact">
+        <div class="container" style="text-align: center;">
+            &copy; 2026 Vivek Singh. All rights reserved.
+        </div>
+    </footer>
+
+    <!-- Scripts -->
     <script src="js/main.js"></script>
 
 </body>
