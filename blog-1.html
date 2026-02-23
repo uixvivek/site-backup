@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>The Role of Micro-Interactions in Usability — Vivek Singh</title>
-    <meta name="description" content="Small details in product design can have a massive impact." />
+    <title>The Power of Simplicity in Product Design — Vivek Singh</title>
+    <meta name="description" content="Why restraint is one of the most powerful design skills you can develop." />
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -15,25 +15,112 @@
         rel="stylesheet" />
 
     <link rel="stylesheet" href="css/style.css" />
+    <style>
+        .post-body {
+            max-width: 680px;
+            color: var(--color-text-secondary);
+            line-height: 1.85;
+            font-size: 1.0625rem;
+        }
+
+        .post-body p {
+            margin-bottom: 1.5rem;
+        }
+
+        .post-body h2 {
+            font-family: var(--font-serif);
+            font-size: 1.6rem;
+            color: var(--color-text-primary);
+            margin-top: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .post-body h3 {
+            font-family: var(--font-serif);
+            font-size: 1.25rem;
+            color: var(--color-text-primary);
+            margin-top: 2rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .post-body ul,
+        .post-body ol {
+            margin-left: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .post-body li {
+            margin-bottom: 0.5rem;
+        }
+
+        .post-body blockquote {
+            border-left: 3px solid var(--color-accent);
+            padding: 0.75rem 1.25rem;
+            margin: 2rem 0;
+            color: var(--color-text-muted);
+            font-style: italic;
+            background: #f8faff;
+            border-radius: 0 4px 4px 0;
+        }
+
+        .post-tags {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin-top: 1rem;
+        }
+
+        .post-tag {
+            background: #f1f5fa;
+            color: var(--color-accent);
+            font-size: 0.75rem;
+            font-weight: 500;
+            padding: 0.25rem 0.75rem;
+            border-radius: 999px;
+        }
+
+        .post-meta {
+            display: flex;
+            gap: 1.5rem;
+            font-size: 0.875rem;
+            color: var(--color-text-muted);
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--color-text-secondary);
+            margin-bottom: 3rem;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--color-accent);
+        }
+    </style>
 </head>
 
 <body>
 
-    <!-- ====================================================================
-       NAVIGATION
-  ===================================================================== -->
-    <nav class="nav" id="main-nav">
+    <!-- NAVIGATION -->
+    <nav class="nav" id="main-nav" role="navigation" aria-label="Main navigation">
         <div class="container nav__inner">
-            <a href="index.html" class="nav__logo">vs.</a>
-            <ul class="nav__links">
+            <a href="index.html" class="nav__logo" aria-label="Go to homepage">vs.</a>
+            <ul class="nav__links" role="list">
                 <li><a href="index.html" class="nav__link">Home</a></li>
                 <li><a href="work.html" class="nav__link">Work</a></li>
                 <li><a href="blog.html" class="nav__link active">Blog</a></li>
                 <li>
-                    <a href="Vivek_Singh_Resume.pdf" download="Vivek_Singh_Resume.pdf" class="btn-primary nav__resume">
+                    <a href="Vivek_Singh_Resume.pdf" download="Vivek_Singh_Resume.pdf" class="btn-primary nav__resume"
+                        aria-label="Download resume PDF">
                         <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
                             stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
-                            style="margin-right: 6px;">
+                            aria-hidden="true">
                             <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
                             <polyline points="7 10 12 15 17 10" />
                             <line x1="12" y1="15" x2="12" y2="3" />
@@ -42,78 +129,169 @@
                     </a>
                 </li>
             </ul>
-
-            <!-- Hamburger -->
-            <button class="nav__hamburger" id="nav-hamburger">
+            <button class="nav__hamburger" id="nav-hamburger" aria-label="Toggle navigation menu" aria-expanded="false"
+                aria-controls="nav-mobile-menu">
                 <span class="nav__hamburger-bar"></span>
                 <span class="nav__hamburger-bar"></span>
                 <span class="nav__hamburger-bar"></span>
             </button>
         </div>
-
-        <!-- Mobile menu -->
-        <div class="nav__mobile-menu" id="nav-mobile-menu">
-            <a href="index.html" class="nav__mobile-link">Home</a>
-            <a href="work.html" class="nav__mobile-link">Work</a>
-            <a href="blog.html" class="nav__mobile-link">Blog</a>
+        <div class="nav__mobile-menu" id="nav-mobile-menu" role="menu">
+            <a href="index.html" class="nav__mobile-link" role="menuitem">Home</a>
+            <a href="work.html" class="nav__mobile-link" role="menuitem">Work</a>
+            <a href="blog.html" class="nav__mobile-link" role="menuitem">Blog</a>
             <div class="nav__mobile-resume">
                 <a href="Vivek_Singh_Resume.pdf" download="Vivek_Singh_Resume.pdf" class="btn-primary nav__mobile-link"
-                    style="justify-content:center;">
+                    style="justify-content:center;" role="menuitem">
                     Download Resume
                 </a>
             </div>
         </div>
     </nav>
 
-    <!-- ====================================================================
-       PAGE HEADER
-  ===================================================================== -->
-    <section class="section" style="padding-top: calc(var(--nav-height) + 10rem); padding-bottom: 2rem;">
+    <!-- PAGE HEADER -->
+    <section class="section" style="padding-top: calc(var(--nav-height) + 6rem); padding-bottom: 0;">
         <div class="container">
-            <h1 class="hero__name" style="font-size: 3rem; text-align: left; margin-bottom: 1rem; line-height: 1.2;">The
-                Role of Micro-Interactions in Usability</h1>
-            <p class="hero__tagline" style="text-align: left;">October 12, 2023</p>
-        </div>
-    </section>
-
-    <!-- ====================================================================
-       CONTENT
-  ===================================================================== -->
-    <section class="section" style="padding-top: 0;">
-        <div class="container">
-            <div style="max-width: 768px; color: var(--color-text-secondary); line-height: 1.8; font-size: 1.125rem;">
-                <p style="margin-bottom: 1.5rem;">Small details in product design can have a massive impact on the
-                    user's perception of quality. Micro-interactions are those subtle functional animations,
-                    transitions, or feedback mechanisms that communicate state and help users navigate complex
-                    interfaces naturally.</p>
-                <p style="margin-bottom: 1.5rem;">Consider the satisfaction of a "like" button animation inflating
-                    momentarily before settling into its active state. Or the reassuring bounce of an error message when
-                    a form field is left blank. These patterns bridge the gap between human intent and machine logic,
-                    softening the digital experience.</p>
-                <h3
-                    style="font-family: var(--font-serif); font-size: 1.75rem; color: var(--color-text-primary); margin-top: 3rem; margin-bottom: 1rem;">
-                    Why Micro-Interactions Matter</h3>
-                <ul style="list-style-type: disc; margin-left: 1.5rem; margin-bottom: 1.5rem;">
-                    <li style="margin-bottom: 0.5rem;"><strong>Immediate Feedback:</strong> They provide instant
-                        confirmation of an action, reducing uncertainty.</li>
-                    <li style="margin-bottom: 0.5rem;"><strong>Guiding Attention:</strong> Subtle motion can draw the
-                        eye towards next steps or error states.</li>
-                    <li style="margin-bottom: 0.5rem;"><strong>Brand Personality:</strong> Unique animations inject life
-                        and character into otherwise sterile applications.</li>
-                </ul>
-                <p>Ultimately, investing time in micro-interactions is investing in the empathy and understanding you
-                    afford your users. It's the difference between a product that works and a product that delights.</p>
-                <div style="margin-top: 4rem;">
-                    <a href="blog.html" style="color: var(--color-accent); font-weight: 500;">&larr; Back to
-                        Writings</a>
-                </div>
+            <a href="blog.html" class="back-link">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M19 12H5" />
+                    <path d="m12 19-7-7 7-7" />
+                </svg>
+                Back to Writings
+            </a>
+            <div class="post-meta">
+                <span>February 8, 2026</span>
+                <span>5 min read</span>
+                <span>Vivek Singh</span>
+            </div>
+            <h1 class="hero__name"
+                style="font-size: 2.75rem; text-align: left; margin-bottom: 1.25rem; line-height: 1.2;">The Power of
+                Simplicity in Product Design</h1>
+            <div class="post-tags">
+                <span class="post-tag">UX Design</span>
+                <span class="post-tag">Product Thinking</span>
+                <span class="post-tag">Design Philosophy</span>
             </div>
         </div>
     </section>
 
-    <!-- ====================================================================
-       FOOTER
-  ===================================================================== -->
+    <!-- ARTICLE CONTENT -->
+    <section class="section" style="padding-top: 3rem; padding-bottom: 6rem;">
+        <div class="container">
+            <div class="post-body">
+                <p>In today's world, we're constantly bombarded with websites filled with animations, vibrant colors,
+                    and complex micro-interactions. As a product designer, I've learned that the most powerful design
+                    choice isn't always adding more — it's knowing when to hold back.</p>
+
+                <h2>Why I Built My Portfolio Simply</h2>
+
+                <p>When I was building my portfolio website, I had a choice: follow the trend of heavily animated,
+                    "award-winning" designs, or create something that truly serves its purpose. I chose the latter, and
+                    here's why.</p>
+
+                <h3>Restraint is a Design Skill</h3>
+
+                <p>The hardest thing for designers to learn isn't how to add features — it's knowing what
+                    <strong>not</strong> to add. I could have made one super duper website, I mean vibe coded but that
+                    thing would just have stopped me from even creating a simple one. I would have kept delaying just to
+                    get
+                    that perfect looking website. Anyways my portfolio has:
+                </p>
+
+                <ul>
+                    <li>Subtle animations that enhance rather than overwhelm</li>
+                    <li>A thoughtful dark mode showing care for accessibility</li>
+                    <li>Clean typography and clear hierarchy</li>
+                    <li>Purposeful micro-interactions on hover and scroll</li>
+                </ul>
+
+                <p>Each of these choices demonstrates maturity in design thinking. They show I understand that design
+                    isn't about showing off — it's about solving problems.</p>
+
+                <blockquote>
+                    "Good design is as little design as possible." — Dieter Rams
+                </blockquote>
+
+                <h3>Flashy Websites Often Hurt More Than Help</h3>
+
+                <p>Many heavily animated portfolio sites suffer from critical issues:</p>
+
+                <ul>
+                    <li>Slow load times that frustrate users</li>
+                    <li>Poor accessibility that excludes people with disabilities</li>
+                    <li>Confusing navigation that hides important information</li>
+                    <li>Generic "Awwwards aesthetic" that looks like everyone else</li>
+                    <li>Content gets lost in the spectacle</li>
+                </ul>
+
+                <p>When you're applying for jobs or pitching to clients, they need to find your information quickly. A
+                    beautiful animation won't matter if they can't figure out how to contact you or see your work.</p>
+
+                <h2>Product Design Principles in Practice</h2>
+
+                <p>As a product designer, I focus on:</p>
+
+                <ol>
+                    <li><strong>User needs first</strong> – Recruiters need to find information quickly ✓</li>
+                    <li><strong>Usability over decoration</strong> – Every element serves a purpose ✓</li>
+                    <li><strong>Functional elegance</strong> – Beauty through simplicity ✓</li>
+                    <li><strong>Accessibility</strong> – Dark mode, readable fonts, clear contrast ✓</li>
+                </ol>
+
+                <p>My portfolio demonstrates these principles rather than just claiming them. It's a working example of
+                    my design philosophy.</p>
+
+                <h3>The Template Trap</h3>
+
+                <p>I could have used a Webflow or Framer template. Many do. But using someone else's design to showcase
+                    <em>your</em> design skills is contradictory. It's like:
+                </p>
+
+                <ul>
+                    <li>A chef serving frozen food at their audition</li>
+                    <li>An architect presenting someone else's building</li>
+                    <li>A musician playing only cover songs at their debut</li>
+                </ul>
+
+                <p>Building from scratch means I can explain every design decision, every choice, every problem I
+                    solved. That's infinitely more valuable in an interview than explaining why I chose Template #47.
+                </p>
+
+                <h2>What Makes Simple Design Stand Out</h2>
+
+                <p>Here's what a well-executed simple design achieves:</p>
+
+                <ul>
+                    <li><strong>Readable</strong> – People actually read the content</li>
+                    <li><strong>Fast</strong> – No waiting for heavy animations</li>
+                    <li><strong>Professional</strong> – Shows you understand business needs</li>
+                    <li><strong>Personal</strong> – Your choices show your thinking</li>
+                    <li><strong>Functional</strong> – Works on any device, any browser</li>
+                </ul>
+
+                <h2>Key Takeaways</h2>
+
+                <p>Whether you're building a portfolio, designing a product, or creating any user experience, remember:
+                </p>
+
+                <ol>
+                    <li>Know your user's primary goal and optimize for that</li>
+                    <li>Every element should serve a purpose — remove what doesn't</li>
+                    <li>Accessibility isn't optional — it's fundamental</li>
+                    <li>Your work should reflect your thinking, not someone else's template</li>
+                    <li>The best design is often invisible — it just works</li>
+                </ol>
+
+                <p>Simple doesn't mean easy. Creating something that feels effortless requires deep thought, careful
+                    consideration, and the courage to say "no" to trends that don't serve your users.</p>
+
+                <p>That's good design.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
     <footer class="footer">
         <div class="container" style="text-align: center;">
             &copy; 2026 Vivek Singh. All rights reserved.

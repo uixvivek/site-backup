@@ -39,7 +39,7 @@
             <ul class="nav__links" role="list">
                 <li><a href="#home" class="nav__link active">Home</a></li>
                 <li><a href="#work" class="nav__link">Work</a></li>
-                <li><a href="#blog" class="nav__link">Blog</a></li>
+                <li><a href="blog.html" class="nav__link">Blog</a></li>
                 <li>
                     <a href="Vivek_Singh_Resume.pdf" download="Vivek_Singh_Resume.pdf" class="btn-primary nav__resume"
                         aria-label="Download resume PDF">
@@ -69,7 +69,7 @@
         <div class="nav__mobile-menu" id="nav-mobile-menu" role="menu">
             <a href="#home" class="nav__mobile-link" role="menuitem">Home</a>
             <a href="#work" class="nav__mobile-link" role="menuitem">Work</a>
-            <a href="#blog" class="nav__mobile-link" role="menuitem">Blog</a>
+            <a href="blog.html" class="nav__mobile-link" role="menuitem">Blog</a>
             <div class="nav__mobile-resume">
                 <a href="Vivek_Singh_Resume.pdf" download="Vivek_Singh_Resume.pdf" class="btn-primary nav__mobile-link"
                     style="justify-content:center;" role="menuitem">
@@ -85,17 +85,19 @@
     <section class="hero section" id="home">
         <div class="container hero__inner">
             <span class="hero__badge">Product Designer</span>
-            <h1 class="hero__name">Vivek Singh</h1>
+            <h1 class="hero__name"><span class="hero__name-first">Vivek</span> <span
+                    class="hero__name-last">Singh</span></h1>
             <p class="hero__tagline">
                 I design simple, usable products and document the process.
             </p>
 
             <div class="hero__actions">
                 <a href="#work" class="btn-primary">View Work</a>
-                <a href="#contact" class="btn-outline">Say Hi !</a>
+                <button id="open-contact-modal" class="btn-outline">Say Hi !</button>
             </div>
 
             <div class="hero__social">
+                <span class="hero__social-label">Let's Connect</span>
                 <a href="https://www.linkedin.com/in/uixvivek" class="hero__social-link" aria-label="LinkedIn"
                     target="_blank" rel="noopener">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
@@ -195,7 +197,7 @@
                     design and product development. I combine technical engineering knowledge with user-centered design
                     thinking to create meaningful digital experiences.Touch
                 </p>
-                <a href="#blog" class="btn-primary btn-primary--white">
+                <a href="blog.html" class="btn-primary btn-primary--white">
                     Read Blogs
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                         stroke-linecap="round" stroke-linejoin="round" style="margin-left: 4px;">
@@ -223,6 +225,38 @@
             &copy; 2026 Vivek Singh. All rights reserved.
         </div>
     </footer>
+
+    <!-- ====================================================================
+       CONTACT MODAL
+  ===================================================================== -->
+    <div class="modal-overlay" id="contact-modal" aria-hidden="true">
+        <div class="modal" role="dialog" aria-labelledby="modal-title" aria-modal="true">
+            <div class="modal__header">
+                <h3 id="modal-title" class="modal__title">Get in Touch</h3>
+                <button class="modal__close" id="close-contact-modal" aria-label="Close modal">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+            <form action="https://formspree.io/f/xeelogpj" method="POST" class="form">
+                <div class="form__group">
+                    <label for="contact-email" class="form__label">Your Email</label>
+                    <input type="email" id="contact-email" name="email" class="form__input"
+                        placeholder="hello@example.com" required>
+                </div>
+                <div class="form__group">
+                    <label for="contact-message" class="form__label">Your Message</label>
+                    <textarea id="contact-message" name="message" class="form__textarea"
+                        placeholder="How can we collaborate?" required></textarea>
+                </div>
+                <button type="submit" class="btn-primary" style="width: 100%; justify-content: center;">Send
+                    Message</button>
+            </form>
+        </div>
+    </div>
 
     <!-- Scripts -->
     <script src="js/main.js"></script>
