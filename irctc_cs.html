@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IRCTC Case Study - Vivek Singh</title>
+    <meta name="description" content="IRCTC UX Redesign Case Study - Vivek Singh, Product Designer" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+        rel="stylesheet" />
+
+    <!-- Shared CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+
+    <!-- =============================================
+         IRCTC - Page-specific styles
+         Brand: Railway Red - authority, trust, India
+         ============================================= -->
+    <style>
+        /* Brand token - override per-page */
+        :root {
+            --cs-brand: #F88A3C;
+            /* IRCTC red: railway authority */
+            --cs-brand-light: #fde8ea;
+            /* Soft red tint */
+            --cs-brand-dark: #F88A3C;
+            /* Deeper red for hover */
+        }
+
+        /* Badge */
+        .page-case-study .hero__badge {
+            background-color: var(--cs-brand-light);
+            color: var(--cs-brand-dark);
+        }
+
+        /* Section labels */
+        .page-case-study .cs-section-label {
+            color: var(--cs-brand-dark);
+        }
+
+        /* Decision numbers */
+        .page-case-study .cs-decision__number {
+            color: var(--cs-brand);
+        }
+
+        /* Conclusion card icons */
+        .page-case-study .cs-conclusion-card__icon {
+            color: var(--cs-brand);
+        }
+
+        /* Back link hover */
+        .page-case-study .case-hero__back:hover {
+            color: var(--cs-brand-dark);
+        }
+
+        /* img-placeholder border tint */
+        .page-case-study .img-placeholder {
+            border-color: #f4a1a7;
+        }
+
+        /* Closing section */
+        .page-case-study .cs-closing {
+            background-color: var(--cs-brand-dark);
+        }
+
+        /* Overview strip top border accent */
+        .page-case-study .cs-overview {
+            border-top: 3px solid var(--cs-brand);
+        }
+
+        /* Pull quote - moved from inline styles */
+        .cs-pullquote {
+            border-left: 4px solid var(--cs-brand);
+            padding: 1.5rem 2rem;
+            margin: 3rem 0;
+            background-color: var(--cs-brand-light);
+            border-radius: 0 8px 8px 0;
+        }
+
+        .cs-pullquote p {
+            font-style: italic;
+            font-size: 1.15rem;
+            line-height: 1.7;
+            margin: 0;
+            color: #1a1a2e;
+        }
+
+        /* Key Findings cards - white on the gray alt-bg section */
+        .cs-alt-bg .cs-conclusion-card {
+            background-color: #ffffff;
+        }
+    </style>
+</head>
+
+<body class="page-case-study">
+
+    <!-- ====================================================================
+     NAVIGATION
+  ===================================================================== -->
+    <nav class="nav" id="main-nav">
+        <div class="container nav__inner">
+            <a href="index.html" class="nav__logo">vs.</a>
+            <ul class="nav__links">
+                <li><a href="index.html" class="nav__link">Home</a></li>
+                <li><a href="work.html" class="nav__link active">Work</a></li>
+                <li><a href="blog.html" class="nav__link">Writing</a></li>
+                <li>
+                    <a href="Vivek_Singh_Resume.pdf" download="Vivek_Singh_Resume.pdf" class="btn-primary nav__resume">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+                            style="margin-right: 6px;">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                            <polyline points="7 10 12 15 17 10" />
+                            <line x1="12" y1="15" x2="12" y2="3" />
+                        </svg>
+                        Resume
+                    </a>
+                </li>
+            </ul>
+
+            <!-- Hamburger -->
+            <button class="nav__hamburger" id="nav-hamburger">
+                <span class="nav__hamburger-bar"></span>
+                <span class="nav__hamburger-bar"></span>
+                <span class="nav__hamburger-bar"></span>
+            </button>
+        </div>
+
+        <!-- Mobile menu -->
+        <div class="nav__mobile-menu" id="nav-mobile-menu">
+            <a href="index.html" class="nav__mobile-link">Home</a>
+            <a href="work.html" class="nav__mobile-link">Work</a>
+            <a href="blog.html" class="nav__mobile-link">Writing</a>
+            <div class="nav__mobile-resume">
+                <a href="Vivek_Singh_Resume.pdf" download="Vivek_Singh_Resume.pdf" class="btn-primary nav__mobile-link"
+                    style="justify-content:center;">
+                    Download Resume
+                </a>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- ====================================================================
+     1. COVER + OVERVIEW
+  ===================================================================== -->
+    <section class="section case-hero">
+        <div class="container case-hero__inner">
+
+            <a href="work.html" class="case-hero__back">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M19 12H5M5 12l7 7M5 12l7-7" />
+                </svg>
+                Back to Work
+            </a>
+
+            <span class="hero__badge">Case Study</span>
+            <h1 class="case-hero__title">IRCTC Redesign</h1>
+            <p class="case-hero__summary">
+                A UX redesign of India's official train booking app - improving information architecture, booking flow
+                clarity, and reducing payment hesitation.
+            </p>
+
+            <!-- Meta row -->
+            <div class="case-hero__meta">
+                <span>Role: Solo UX Designer</span>
+                <span>Type: UX/UI Redesign</span>
+                <span>Tools: Figma, Notion</span>
+                <span>Year: 2026</span>
+            </div>
+
+            <!-- Cover image -->
+            <div class="img-placeholder img-placeholder--hero">
+                <span>IRCTC Cover - App Icon + Redesigned Screens</span>
+            </div>
+
+            <!-- Overview stats strip -->
+            <div class="cs-overview">
+                <div class="cs-overview__item">
+                    <span class="cs-overview__label">Project Type</span>
+                    <span class="cs-overview__value">UX / UI Redesign</span>
+                </div>
+                <div class="cs-overview__item">
+                    <span class="cs-overview__label">Platform</span>
+                    <span class="cs-overview__value">Mobile App (Android)</span>
+                </div>
+                <div class="cs-overview__item">
+                    <span class="cs-overview__label">Goal</span>
+                    <span class="cs-overview__value">Improve booking flow clarity</span>
+                </div>
+                <div class="cs-overview__item">
+                    <span class="cs-overview__label">Research</span>
+                    <span class="cs-overview__value">Secondary - Reddit, Quora, Play Store</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- ====================================================================
+     2. PROBLEM
+  ===================================================================== -->
+    <section class="section">
+        <div class="container">
+            <div class="cs-two-col">
+
+                <div class="cs-two-col__text">
+                    <p class="cs-section-label">Context</p>
+                    <h2 class="section-title">The App Everyone Uses But Nobody Enjoys</h2>
+                    <p class="cs-body">
+                        IRCTC is India's official train booking platform, used by millions - from daily commuters to
+                        occasional travelers, largely from <strong>middle and lower-middle class backgrounds.</strong>
+                        While third party apps like Ixigo and Paytm offer alternatives, users consistently return to
+                        IRCTC for its trusted pricing and direct booking authority.
+                    </p>
+                    <p class="cs-body">
+                        They use it not because the experience is good, but because the alternative costs more or feels
+                        less reliable.
+                    </p>
+                </div>
+
+                <div class="cs-two-col__text">
+                    <p class="cs-section-label">Problem</p>
+                    <h2 class="section-title">Defining The Problem</h2>
+                    <p class="cs-body">
+                        The app treats every element as equally important. Too many options compete for attention on the
+                        home screen, form inputs feel demanding and alert-inducing, and by the time users reach payment
+                        they are already mentally exhausted.
+                    </p>
+                    <p class="cs-body">
+                        Drop-offs may be low - users complete the booking - but hesitation is high and confidence is
+                        low.
+                    </p>
+                </div>
+
+            </div>
+
+            <!-- Pull quote -->
+            <blockquote class="cs-pullquote">
+                <p>
+                    "Users complete the booking but only feel satisfied when they see the correct ticket - the relief
+                    reveals how much anxiety came before it."
+                </p>
+            </blockquote>
+
+            <!-- Problem visual -->
+            <div class="img-placeholder" style="margin-top: 2rem;">
+                <span>IRCTC Redesigned Results Screen</span>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- ====================================================================
+     3. RESEARCH
+  ===================================================================== -->
+    <section class="section cs-alt-bg">
+        <div class="container">
+
+            <p class="cs-section-label">Research</p>
+            <h2 class="section-title">Research Methods</h2>
+            <p class="cs-body" style="max-width: 640px; margin-bottom: 2rem;">
+                Due to project constraints, I conducted secondary research through analysis of 70+ user reviews across
+                Reddit, Quora, and Google Play Store, and user comments on YouTube tutorial videos demonstrating the
+                ticket booking flow.
+            </p>
+
+            <!-- Review screenshots placeholder -->
+            <div class="img-placeholder" style="margin-bottom: 3rem;">
+                <span>User Review Screenshots - Reddit, Quora, Play Store</span>
+            </div>
+
+            <h3 class="cs-subheading" style="margin-bottom: 2rem;">Key Findings</h3>
+
+            <div class="cs-conclusion-grid">
+
+                <div class="cs-conclusion-card">
+                    <div class="cs-conclusion-card__icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="3" width="18" height="18" rx="2" />
+                            <path d="M3 9h18M9 21V9" />
+                        </svg>
+                    </div>
+                    <h3 class="cs-conclusion-card__title">Information Overload on Home Screen</h3>
+                    <p class="cs-body" style="margin: 0;">Too many equally weighted options compete for attention,
+                        forcing users to scan everything before starting their primary task of booking a ticket.</p>
+                </div>
+
+                <div class="cs-conclusion-card">
+                    <div class="cs-conclusion-card__icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                            <polyline points="14 2 14 8 20 8" />
+                        </svg>
+                    </div>
+                    <h3 class="cs-conclusion-card__title">Form Input Anxiety</h3>
+                    <p class="cs-body" style="margin: 0;">Passenger detail screens present 8+ fields simultaneously with
+                        no clear hierarchy, making users feel alert and hesitant to proceed.</p>
+                </div>
+
+                <div class="cs-conclusion-card">
+                    <div class="cs-conclusion-card__icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10" />
+                            <path d="M12 8v4M12 16h.01" />
+                        </svg>
+                    </div>
+                    <h3 class="cs-conclusion-card__title">Payment Hesitation</h3>
+                    <p class="cs-body" style="margin: 0;">Users reach the payment screen mentally exhausted. Drop-offs
+                        are low but confidence is also low - users check details two or three times before paying,
+                        revealing underlying anxiety about errors.</p>
+                </div>
+
+                <div class="cs-conclusion-card">
+                    <div class="cs-conclusion-card__icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10" />
+                            <polyline points="12 6 12 12 16 14" />
+                        </svg>
+                    </div>
+                    <h3 class="cs-conclusion-card__title">24hr Format Friction</h3>
+                    <p class="cs-body" style="margin: 0;">In a country where 12hr AM/PM is the daily standard, the
+                        mandatory 24hr format creates mental conversion effort, especially during time-sensitive Tatkal
+                        bookings. A technical bug further forces users to change their entire phone settings for the app
+                        to function.</p>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- ====================================================================
+     4. USER PERSONA
+  ===================================================================== -->
+    <section class="section">
+        <div class="container">
+
+            <p class="cs-section-label">User</p>
+            <h2 class="section-title">User Persona & Empathy Map</h2>
+
+            <div class="cs-persona-grid" style="margin-bottom: 3rem;">
+                <div class="cs-persona">
+                    <h3 class="cs-persona__name">User Persona</h3>
+                    <div class="img-placeholder img-placeholder--square">
+                        <span>User Persona Image</span>
+                    </div>
+                </div>
+
+                <div class="cs-persona">
+                    <h3 class="cs-persona__name">Empathy Map</h3>
+                    <div class="img-placeholder img-placeholder--square">
+                        <span>Empathy Map Image</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- ====================================================================
+     5. IA IMPROVEMENTS
+  ===================================================================== -->
+    <section class="section cs-alt-bg">
+        <div class="container">
+
+            <p class="cs-section-label">Design</p>
+            <h2 class="section-title">Information Architecture Improvements</h2>
+
+            <!-- Before / After IA -->
+            <div class="img-placeholder img-placeholder--wide" style="margin-bottom: 3rem;">
+                <span>Before &amp; After — Home Screen (IA Comparison)</span>
+            </div>
+
+            <div class="cs-decision__body">
+                <div class="cs-decision__text">
+                    <h3 style="margin-bottom: 1rem; font-weight: 600;">Before</h3>
+                    <p class="cs-body">Multiple unrelated services (travel, shopping, bills) are mixed on the home
+                        screen.</p>
+                    <p class="cs-body">No clear primary booking entry point - users must scan too much before starting.
+                    </p>
+                    <p class="cs-body">Navigation is not task-based, causing confusion and trial-and-error.</p>
+                </div>
+                <div class="cs-decision__text">
+                    <h3 style="margin-bottom: 1rem; font-weight: 600;">After</h3>
+                    <p class="cs-body">Booking is prioritized with a clear form and primary CTA visible above the fold.
+                    </p>
+                    <p class="cs-body">Bottom navigation reorganized into task-based sections: Book, Trips, Help,
+                        Profile.</p>
+                    <p class="cs-body">Secondary actions (PNR, Live Status, Cancel Ticket) are separated from the
+                        booking flow.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- ====================================================================
+     6. BOOKING SCREEN + PASSENGER DETAILS
+  ===================================================================== -->
+    <section class="section">
+        <div class="container">
+
+            <p class="cs-section-label">Design</p>
+            <h2 class="section-title">Booking Screen Redesign</h2>
+
+            <div class="img-placeholder img-placeholder--wide" style="margin-bottom: 2rem;">
+                <span>Before &amp; After — Results Screen (Comparison)</span>
+            </div>
+
+            <div class="cs-decision__body" style="margin-bottom: 3rem;">
+                <div class="cs-decision__text">
+                    <h3 style="margin-bottom: 0.75rem; font-weight: 600;">Before</h3>
+                    <p class="cs-body">Train options are difficult to compare due to cluttered cards and weak visual
+                        hierarchy. Key decision-making information competes with repeated elements and unnecessary UI
+                        noise.</p>
+                </div>
+                <div class="cs-decision__text">
+                    <h3 style="margin-bottom: 0.75rem; font-weight: 600;">After</h3>
+                    <p class="cs-body">Train options structured into cleaner cards with stronger hierarchy. Departure,
+                        arrival, duration and route are easier to scan. Availability and class selection simplified
+                        using compact chips.</p>
+                </div>
+            </div>
+
+            <!-- Problem framing -->
+            <p class="cs-section-label" style="margin-top: 3rem;">Problem Framing</p>
+            <h2 class="section-title">Passenger Details - Before & After</h2>
+
+            <div class="img-placeholder img-placeholder--wide" style="margin-bottom: 2rem;">
+                <span>Before &amp; After — Passenger Details (Comparison)</span>
+            </div>
+
+            <div class="cs-conclusion-grid">
+                <div class="cs-conclusion-card">
+                    <h3 class="cs-conclusion-card__title">Information Architecture</h3>
+                    <ul class="cs-conclusion-card__list">
+                        <li>8+ form fields on a single screen.</li>
+                        <li>No distinction between critical and less important information.</li>
+                        <li>Journey details and payment shown unnecessarily, increasing cognitive load.</li>
+                    </ul>
+                </div>
+                <div class="cs-conclusion-card">
+                    <h3 class="cs-conclusion-card__title">Visual Design</h3>
+                    <ul class="cs-conclusion-card__list">
+                        <li>Flat visual hierarchy - all info shown as equally important.</li>
+                        <li>Inconsistent spacing throughout.</li>
+                        <li>Poor CTA detailing.</li>
+                    </ul>
+                </div>
+                <div class="cs-conclusion-card">
+                    <h3 class="cs-conclusion-card__title">Improvements</h3>
+                    <ul class="cs-conclusion-card__list">
+                        <li>Reduced form fields to 4 from 8+.</li>
+                        <li>Clear sectioning of form fields.</li>
+                        <li>50% reduction in fields - reduced cognitive load and a strong, clear CTA.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Key screens -->
+            <div class="img-placeholder img-placeholder--wide" style="margin-top: 3rem;">
+                <span>Key Screens - Home, Results, Passenger Details, Review & Pay</span>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- ====================================================================
+     7. BOOKING FLOW
+  ===================================================================== -->
+    <section class="section cs-alt-bg">
+        <div class="container">
+
+            <p class="cs-section-label">User Flow</p>
+            <h2 class="section-title">The Redesigned Booking Flow</h2>
+            <p class="cs-body" style="max-width: 640px; margin-bottom: 3rem;">
+                The redesigned flow covers the most critical screens in the journey - Home, Search, Results, Passenger
+                Details, Review, and Payment.
+            </p>
+
+            <div class="img-placeholder img-placeholder--wide">
+                <span>Booking Flow - Open App → Select Stations → Choose Train → Add Passenger → Review → Pay →
+                    Done</span>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- ====================================================================
+     8. CONCLUSION
+  ===================================================================== -->
+    <section class="section">
+        <div class="container">
+
+            <p class="cs-section-label">Conclusion</p>
+            <h2 class="section-title">Assumptions, Tests &amp; Changes</h2>
+
+            <div class="cs-conclusion-grid">
+
+                <div class="cs-conclusion-card">
+                    <div class="cs-conclusion-card__icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10" />
+                            <path d="M12 16v-4M12 8h.01" />
+                        </svg>
+                    </div>
+                    <h3 class="cs-conclusion-card__title">What I Assumed</h3>
+                    <ul class="cs-conclusion-card__list">
+                        <li>Users struggle with the 24hr time format. Research confirmed this - India uses 12hr AM/PM
+                            daily, so mental conversion creates real friction especially in Tatkal bookings.</li>
+                        <li>Users carefully read every field on the passenger details screen. What I didn't anticipate:
+                            the app crashes for phones set to 12hr format, forcing users to change their device settings
+                            just to use IRCTC.</li>
+                    </ul>
+                </div>
+
+                <div class="cs-conclusion-card">
+                    <div class="cs-conclusion-card__icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M9 11l3 3L22 4" />
+                            <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+                        </svg>
+                    </div>
+                    <h3 class="cs-conclusion-card__title">What I Would Test</h3>
+                    <ul class="cs-conclusion-card__list">
+                        <li>Time taken by regular vs infrequent users to select a train - frequent travelers likely
+                            already know their train.</li>
+                        <li>Time spent on the payment screen before confirming - hesitation time signals anxiety even
+                            when drop-offs are low.</li>
+                    </ul>
+                </div>
+
+                <div class="cs-conclusion-card">
+                    <div class="cs-conclusion-card__icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 20h9" />
+                            <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z" />
+                        </svg>
+                    </div>
+                    <h3 class="cs-conclusion-card__title">What I Would Change</h3>
+                    <ul class="cs-conclusion-card__list">
+                        <li>Add a simple 12hr/24hr toggle - something Ixigo already offers - to reduce both cognitive
+                            and technical friction.</li>
+                        <li>Validate if the redesigned review screen actually reduces payment hesitation.</li>
+                        <li>Continue improving visual hierarchy on form screens based on real user observation.</li>
+                    </ul>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- ====================================================================
+     9. CLOSING
+  ===================================================================== -->
+    <section class="section cs-closing">
+        <div class="container cs-closing__inner">
+
+            <p class="cs-section-label cs-closing__label">Closing</p>
+            <h2 class="cs-closing__title">Takeaways</h2>
+            <p class="cs-body cs-closing__body">
+                This case study focuses on improving the IRCTC booking experience through clearer information
+                architecture, a more structured booking flow, and improved screen hierarchy across key steps. The
+                biggest learning was that high-stakes flows like ticket booking require strong hierarchy and predictable
+                navigation - better structure and UX writing can improve trust even without backend changes. Reducing
+                clutter is often the fastest path to improving usability.
+            </p>
+
+            <a href="work.html" class="btn-outline cs-closing__cta">← Back to all projects</a>
+
+        </div>
+    </section>
+
+
+    <!-- ====================================================================
+     FOOTER
+  ===================================================================== -->
+    <footer class="footer">
+        <div class="container" style="text-align: center;">
+            &copy; 2026 Vivek Singh. All rights reserved.
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>
