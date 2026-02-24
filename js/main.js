@@ -78,6 +78,25 @@
   });
 
   /* ------------------------------------------------------------------
+     5. CLEAN ANCHOR SCROLL
+     Intercept hash-anchor clicks so they scroll smoothly to the section
+     without appending #hash to the URL bar.
+  ------------------------------------------------------------------ */
+  document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
+    anchor.addEventListener('click', function (e) {
+      const hash = this.getAttribute('href');
+      if (!hash || hash === '#') return;
+      const target = document.querySelector(hash);
+      if (!target) return;
+      e.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      // Keep the URL clean — no fragment in the address bar
+      history.replaceState(null, '', window.location.pathname);
+      closeMenu(); // also close mobile menu if open
+    });
+  });
+
+  /* ------------------------------------------------------------------
      5. CONTACT MODAL
      Handle opening and closing the Formspree contact modal
   ------------------------------------------------------------------ */
@@ -117,5 +136,59 @@
       closeModal();
     }
   });
+
+  /* ------------------------------------------------------------------
+     6. IMAGE LIGHTBOX (case study pages only)
+     Click any <img> inside .page-case-study → opens lightbox overlay.
+     Click overlay → closes it. Escape also closes.
+  ------------------------------------------------------------------ */
+  if (document.body.classList.contains('page-case-study')) {
+
+    // Build overlay once
+    const lb = document.createElement('div');
+    lb.className = 'lightbox-overlay';
+    lb.setAttribute('aria-modal', 'true');
+    lb.setAttribute('role', 'dialog');
+    lb.setAttribute('aria-label', 'Image preview');
+
+    const lbImg = document.createElement('img');
+    lb.appendChild(lbImg);
+    document.body.appendChild(lb);
+
+    function openLightbox(src, alt) {
+      lbImg.src = src;
+      lbImg.alt = alt || '';
+      lb.classList.add('is-open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+      lb.classList.remove('is-open');
+      document.body.style.overflow = '';
+      // Clear src after transition so no flash on next open
+      setTimeout(function () { lbImg.src = ''; }, 260);
+    }
+
+    // Delegate clicks on all content images in the page
+    document.querySelectorAll('.page-case-study img').forEach(function (img) {
+      // Skip nav logo
+      if (img.closest('nav')) return;
+      img.addEventListener('click', function () {
+        openLightbox(this.src, this.alt);
+      });
+    });
+
+    // Close on overlay click (but not on the image itself)
+    lb.addEventListener('click', function (e) {
+      if (e.target === lb) closeLightbox();
+    });
+
+    // Close on Escape
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && lb.classList.contains('is-open')) {
+        closeLightbox();
+      }
+    });
+  }
 
 })();
