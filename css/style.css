@@ -255,6 +255,7 @@ button {
   color: var(--color-text-muted);
   max-width: 600px;
   margin-bottom: 2.5rem;
+  white-space: nowrap;
 }
 
 .hero__actions {
@@ -287,8 +288,15 @@ button {
   width: 100%;
   border: none;
   border-top: 1px solid var(--color-border);
-  margin-top: 2rem;
-  margin-bottom: 3rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.hero__status {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  margin-bottom: 0;
+  max-width: 480px;
 }
 
 /* --------------------------------------------------------------------------
@@ -505,6 +513,7 @@ button {
   .hero__tagline {
     font-size: 0.9rem;
     margin-bottom: 2rem;
+    white-space: normal;
   }
 
   .hero__actions {
@@ -590,7 +599,573 @@ button {
   }
 }
 
-/* Hide social label on desktop — shown on mobile via media query above */
+/* ================= CASE STUDY ================= */
+
+.case-hero {
+  padding-top: calc(var(--nav-height) + 6rem);
+}
+
+.case-hero__back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-text-secondary);
+  margin-bottom: 2rem;
+  transition: color 0.2s;
+}
+
+.case-hero__back:hover {
+  color: var(--color-accent);
+}
+
+/* Image placeholders (replaced with real images later) */
+.img-placeholder {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background-color: var(--color-bg-card);
+  border: 2px dashed var(--color-border);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-muted);
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.img-placeholder--hero {
+  aspect-ratio: 16 / 7;
+}
+
+.img-placeholder--wide {
+  aspect-ratio: 21 / 9;
+  margin-bottom: 3rem;
+}
+
+.case-hero__inner {
+  display: flex;
+  flex-direction: column;
+}
+
+.case-hero__title {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  margin: 1rem 0;
+}
+
+.case-hero__summary {
+  max-width: 640px;
+  margin-bottom: 1.5rem;
+}
+
+.case-hero__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  font-size: 0.9rem;
+  opacity: 0.7;
+  margin-bottom: 2rem;
+}
+
+.case-hero__image img,
+.case-section__image img,
+.case-full-image img,
+.case-grid__item img {
+  width: 100%;
+  border-radius: 16px;
+  display: block;
+}
+
+.case-section__grid {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.case-section__grid--reverse {
+  flex-direction: column;
+}
+
+.case-grid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: 1fr;
+}
+
+.case-impact__metric {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+
+  .case-hero__title {
+    font-size: 3.5rem;
+  }
+
+  .case-section__grid {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .case-section__grid--reverse {
+    flex-direction: row-reverse;
+    align-items: center;
+  }
+
+  .case-section__content,
+  .case-section__image {
+    flex: 1;
+  }
+
+  .case-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+}
+
+/* --- Shared helpers --- */
+.cs-section-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin-bottom: 0.5rem;
+}
+
+.cs-body {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--color-text-secondary);
+  margin-bottom: 1rem;
+}
+
+.cs-subheading {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+/* Alternate section background */
+.cs-alt-bg {
+  background-color: var(--color-bg-card);
+}
+
+/* --- Overview stats strip --- */
+.cs-overview {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin-top: 3rem;
+  padding: 2rem;
+  background-color: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+}
+
+.cs-overview__item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.cs-overview__label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-text-muted);
+}
+
+.cs-overview__value {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+/* --- Two column intro/problem --- */
+.cs-two-col {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+}
+
+@media (min-width: 768px) {
+  .cs-two-col {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .cs-overview {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* --- Personas --- */
+.cs-persona-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+  .cs-persona-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.cs-persona {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.cs-persona__name {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-top: 1rem;
+  color: var(--color-text-primary);
+}
+
+.cs-persona__role {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  margin-bottom: 0.25rem;
+}
+
+/* --- Design decisions --- */
+.cs-decision {
+  margin-bottom: 4rem;
+  padding-bottom: 4rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.cs-decision:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.cs-decision__header {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.cs-decision__number {
+  font-family: var(--font-serif);
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--color-accent);
+  opacity: 0.25;
+  line-height: 1;
+}
+
+.cs-decision__title {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+.cs-decision__body {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .cs-decision__body {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .cs-decision__body--reverse {
+    direction: rtl;
+  }
+
+  .cs-decision__body--reverse>* {
+    direction: ltr;
+  }
+}
+
+/* --- User flow screens grid --- */
+.cs-screens-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .cs-screens-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* --- Conclusion cards --- */
+.cs-conclusion-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .cs-conclusion-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.cs-conclusion-card {
+  background-color: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 2rem;
+}
+
+.cs-conclusion-card__icon {
+  color: var(--color-accent);
+  margin-bottom: 1rem;
+}
+
+.cs-conclusion-card__title {
+  font-weight: 600;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  color: var(--color-text-primary);
+}
+
+.cs-conclusion-card__list {
+  list-style: disc;
+  padding-left: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+}
+
+/* --- Closing section --- */
+.cs-closing {
+  background-color: var(--color-accent);
+  color: #ffffff;
+}
+
+.cs-closing__inner {
+  max-width: 640px;
+}
+
+.cs-closing__label {
+  color: #ffffff;
+}
+
+.cs-closing__title {
+  font-family: var(--font-serif);
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: #ffffff;
+}
+
+.cs-closing__body {
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 2rem;
+}
+
+.cs-closing__cta {
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.cs-closing__cta:hover {
+  border-color: #ffffff;
+}
+
+/* --- Extra placeholder variants --- */
+.img-placeholder--square {
+  aspect-ratio: 1 / 1;
+}
+
+.img-placeholder--screen {
+  aspect-ratio: 9 / 16;
+}
+
+/* ==========================================================================
+   LIGHTBOX
+   ========================================================================== */
+.lightbox-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(0, 0, 0, 0.88);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.25s ease, visibility 0.25s ease;
+  cursor: zoom-out;
+}
+
+.lightbox-overlay.is-open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.lightbox-overlay img {
+  max-width: 100%;
+  max-height: 90vh;
+  border-radius: 12px;
+  box-shadow: 0 32px 80px rgba(0, 0, 0, 0.6);
+  transform: scale(0.92);
+  transition: transform 0.25s ease;
+  cursor: default;
+  object-fit: contain;
+}
+
+.lightbox-overlay.is-open img {
+  transform: scale(1);
+}
+
+/* Clickable case-study images */
+.page-case-study img:not(.nav__logo) {
+  cursor: zoom-in;
+}
+
+/* ==========================================================================
+   CASE STUDY — MOBILE SPACING  (max-width: 767px)
+   ========================================================================== */
+@media (max-width: 767px) {
+
+  /* Hero */
+  .case-hero {
+    padding-top: calc(var(--nav-height) + 3rem);
+  }
+
+  .case-hero__title {
+    font-size: 2rem;
+    margin: 0.75rem 0;
+  }
+
+  .case-hero__summary {
+    font-size: 0.95rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .case-hero__meta {
+    gap: 0.5rem;
+    font-size: 0.8rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .case-hero__back {
+    margin-bottom: 1.25rem;
+  }
+
+  /* Section padding — tighter on mobile */
+  .page-case-study .section {
+    padding-block: 3rem;
+  }
+
+  /* Section title */
+  .page-case-study .section-title {
+    font-size: 1.5rem;
+    margin-bottom: 1.25rem;
+  }
+
+  /* Body text */
+  .cs-body {
+    font-size: 0.95rem;
+  }
+
+  /* Overview strip — 2 columns on mobile */
+  .cs-overview {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    padding: 1.25rem;
+    margin-top: 2rem;
+  }
+
+  .cs-overview__value {
+    font-size: 0.9rem;
+  }
+
+  /* Two-col intro → tighter gap */
+  .cs-two-col {
+    gap: 2rem;
+  }
+
+  /* Persona grid — tighter */
+  .cs-persona-grid {
+    gap: 1.5rem;
+    margin-bottom: 0;
+  }
+
+  .cs-persona__name {
+    font-size: 1rem;
+    margin-top: 0.75rem;
+  }
+
+  /* Design decisions — tighter */
+  .cs-decision {
+    margin-bottom: 2.5rem;
+    padding-bottom: 2.5rem;
+  }
+
+  .cs-decision__header {
+    gap: 0.75rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .cs-decision__number {
+    font-size: 1.75rem;
+  }
+
+  .cs-decision__title {
+    font-size: 1.15rem;
+  }
+
+  .cs-decision__body {
+    gap: 1.25rem;
+  }
+
+  /* Conclusion cards — tighter padding */
+  .cs-conclusion-grid {
+    gap: 1rem;
+  }
+
+  .cs-conclusion-card {
+    padding: 1.25rem;
+  }
+
+  /* Screens grid */
+  .cs-screens-grid {
+    gap: 1rem;
+  }
+
+  /* Closing section */
+  .cs-closing__title {
+    font-size: 1.75rem;
+  }
+
+  /* Wide placeholder — 16/9 on mobile instead of ultra-wide */
+  .img-placeholder--wide {
+    aspect-ratio: 16 / 9;
+    margin-bottom: 1.5rem;
+  }
+
+  /* Hero placeholder — full 16/9 on mobile */
+  .img-placeholder--hero {
+    aspect-ratio: 16 / 9;
+  }
+
+}
 
 @media (max-width: 768px) {
   .nav__links {
