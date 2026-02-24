@@ -94,10 +94,72 @@
         .cs-alt-bg .cs-conclusion-card {
             background-color: #ffffff;
         }
+
+        /* ================================================
+           TABLE OF CONTENTS - desktop only (≥1440px)
+           Sits in the natural container margin on the right
+           ================================================ */
+        .cs-toc {
+            display: none;
+        }
+
+        @media (min-width: 1440px) {
+            .cs-toc {
+                display: block;
+                position: fixed;
+                top: 50%;
+                transform: translateY(-50%);
+                right: 1.75rem;
+                width: 148px;
+                z-index: 50;
+            }
+
+            .cs-toc__heading {
+                font-size: 0.68rem;
+                font-weight: 700;
+                letter-spacing: 0.12em;
+                text-transform: uppercase;
+                color: var(--color-text-muted);
+                margin: 0 0 0.75rem 0.6rem;
+            }
+
+            .cs-toc__list {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+                display: flex;
+                flex-direction: column;
+                gap: 0.1rem;
+            }
+
+            .cs-toc__link {
+                font-size: 0.78rem;
+                color: var(--color-text-muted);
+                text-decoration: none;
+                display: block;
+                padding: 0.3rem 0.6rem;
+                border-left: 2px solid transparent;
+                border-radius: 0 4px 4px 0;
+                transition: color 0.2s, border-color 0.2s, background 0.2s;
+                line-height: 1.35;
+            }
+
+            .cs-toc__link:hover {
+                color: var(--color-text-primary);
+                background: rgba(0, 0, 0, 0.04);
+            }
+
+            .cs-toc__link.is-active {
+                color: var(--cs-brand);
+                border-left-color: var(--cs-brand);
+                font-weight: 500;
+            }
+        }
     </style>
 </head>
 
 <body class="page-case-study">
+
 
     <!-- ====================================================================
      NAVIGATION
@@ -149,7 +211,7 @@
     <!-- ====================================================================
      1. COVER + OVERVIEW
   ===================================================================== -->
-    <section class="section case-hero">
+    <section class="section case-hero" id="section-cover">
         <div class="container case-hero__inner">
 
             <a href="work.html" class="case-hero__back">
@@ -176,9 +238,8 @@
             </div>
 
             <!-- Cover image -->
-            <div class="img-placeholder img-placeholder--hero">
-                <span>IRCTC Cover - App Icon + Redesigned Screens</span>
-            </div>
+            <img src="images/irctc/irctc-cover.png" alt="IRCTC Cover"
+                style="width:100%; border-radius:16px; display:block;" />
 
             <!-- Overview stats strip -->
             <div class="cs-overview">
@@ -207,7 +268,7 @@
     <!-- ====================================================================
      2. PROBLEM
   ===================================================================== -->
-    <section class="section">
+    <section class="section" id="section-problem">
         <div class="container">
             <div class="cs-two-col">
 
@@ -250,10 +311,6 @@
                 </p>
             </blockquote>
 
-            <!-- Problem visual -->
-            <div class="img-placeholder" style="margin-top: 2rem;">
-                <span>IRCTC Redesigned Results Screen</span>
-            </div>
 
         </div>
     </section>
@@ -262,7 +319,7 @@
     <!-- ====================================================================
      3. RESEARCH
   ===================================================================== -->
-    <section class="section cs-alt-bg">
+    <section class="section cs-alt-bg" id="section-research">
         <div class="container">
 
             <p class="cs-section-label">Research</p>
@@ -273,10 +330,9 @@
                 ticket booking flow.
             </p>
 
-            <!-- Review screenshots placeholder -->
-            <div class="img-placeholder" style="margin-bottom: 3rem;">
-                <span>User Review Screenshots - Reddit, Quora, Play Store</span>
-            </div>
+            <!-- Review screenshots -->
+            <img src="images/irctc/irctc-research.png" alt="User Review Screenshots — Reddit, Quora, Play Store"
+                style="width:100%; border-radius:16px; display:block; margin-bottom:3rem;" />
 
             <h3 class="cs-subheading" style="margin-bottom: 2rem;">Key Findings</h3>
 
@@ -346,7 +402,7 @@
     <!-- ====================================================================
      4. USER PERSONA
   ===================================================================== -->
-    <section class="section">
+    <section class="section" id="section-personas">
         <div class="container">
 
             <p class="cs-section-label">User</p>
@@ -355,16 +411,14 @@
             <div class="cs-persona-grid" style="margin-bottom: 3rem;">
                 <div class="cs-persona">
                     <h3 class="cs-persona__name">User Persona</h3>
-                    <div class="img-placeholder img-placeholder--square">
-                        <span>User Persona Image</span>
-                    </div>
+                    <img src="images/irctc/irctc-persona.png" alt="User Persona"
+                        style="width:100%; aspect-ratio:1/1; object-fit:cover; border-radius:12px; display:block;" />
                 </div>
 
                 <div class="cs-persona">
                     <h3 class="cs-persona__name">Empathy Map</h3>
-                    <div class="img-placeholder img-placeholder--square">
-                        <span>Empathy Map Image</span>
-                    </div>
+                    <img src="images/irctc/irctc-empathy.png" alt="Empathy Map"
+                        style="width:100%; aspect-ratio:1/1; object-fit:cover; border-radius:12px; display:block;" />
                 </div>
             </div>
 
@@ -375,16 +429,15 @@
     <!-- ====================================================================
      5. IA IMPROVEMENTS
   ===================================================================== -->
-    <section class="section cs-alt-bg">
+    <section class="section cs-alt-bg" id="section-ia">
         <div class="container">
 
             <p class="cs-section-label">Design</p>
             <h2 class="section-title">Information Architecture Improvements</h2>
 
             <!-- Before / After IA -->
-            <div class="img-placeholder img-placeholder--wide" style="margin-bottom: 3rem;">
-                <span>Before &amp; After — Home Screen (IA Comparison)</span>
-            </div>
+            <img src="images/irctc/irctc-compare-home.png" alt="Before &amp; After — Home Screen (IA Comparison)"
+                style="width:100%; border-radius:16px; display:block; margin-bottom:3rem;" />
 
             <div class="cs-decision__body">
                 <div class="cs-decision__text">
@@ -413,15 +466,13 @@
     <!-- ====================================================================
      6. BOOKING SCREEN + PASSENGER DETAILS
   ===================================================================== -->
-    <section class="section">
+    <section class="section" id="section-booking">
         <div class="container">
 
             <p class="cs-section-label">Design</p>
             <h2 class="section-title">Booking Screen Redesign</h2>
-
-            <div class="img-placeholder img-placeholder--wide" style="margin-bottom: 2rem;">
-                <span>Before &amp; After — Results Screen (Comparison)</span>
-            </div>
+            <img src="images/irctc/irctc-compare-results.png" alt="Before &amp; After — Results Screen"
+                style="width:100%; border-radius:16px; display:block; margin-bottom:2rem;" />
 
             <div class="cs-decision__body" style="margin-bottom: 3rem;">
                 <div class="cs-decision__text">
@@ -442,9 +493,8 @@
             <p class="cs-section-label" style="margin-top: 3rem;">Problem Framing</p>
             <h2 class="section-title">Passenger Details - Before & After</h2>
 
-            <div class="img-placeholder img-placeholder--wide" style="margin-bottom: 2rem;">
-                <span>Before &amp; After — Passenger Details (Comparison)</span>
-            </div>
+            <img src="images/irctc/irctc-compare-passenger.png" alt="Before &amp; After — Passenger Details"
+                style="width:100%; border-radius:16px; display:block; margin-bottom:2rem;" />
 
             <div class="cs-conclusion-grid">
                 <div class="cs-conclusion-card">
@@ -474,9 +524,9 @@
             </div>
 
             <!-- Key screens -->
-            <div class="img-placeholder img-placeholder--wide" style="margin-top: 3rem;">
-                <span>Key Screens - Home, Results, Passenger Details, Review & Pay</span>
-            </div>
+            <img src="images/irctc/irctc-key-screens.png"
+                alt="Key Screens — Home, Results, Passenger Details, Review &amp; Pay"
+                style="width:100%; border-radius:16px; display:block; margin-top:3rem;" />
 
         </div>
     </section>
@@ -485,7 +535,7 @@
     <!-- ====================================================================
      7. BOOKING FLOW
   ===================================================================== -->
-    <section class="section cs-alt-bg">
+    <section class="section cs-alt-bg" id="section-flow">
         <div class="container">
 
             <p class="cs-section-label">User Flow</p>
@@ -495,10 +545,8 @@
                 Details, Review, and Payment.
             </p>
 
-            <div class="img-placeholder img-placeholder--wide">
-                <span>Booking Flow - Open App → Select Stations → Choose Train → Add Passenger → Review → Pay →
-                    Done</span>
-            </div>
+            <img src="images/irctc/irctc-flow.png" alt="Booking Flow — Open App to Done"
+                style="width:100%; border-radius:16px; display:block;" />
 
         </div>
     </section>
@@ -507,7 +555,7 @@
     <!-- ====================================================================
      8. CONCLUSION
   ===================================================================== -->
-    <section class="section">
+    <section class="section" id="section-conclusion">
         <div class="container">
 
             <p class="cs-section-label">Conclusion</p>
@@ -604,7 +652,47 @@
         </div>
     </footer>
 
+    <!-- ================================================================
+         TABLE OF CONTENTS (desktop-only sticky nav)
+    ================================================================ -->
+    <nav class="cs-toc" aria-label="Page contents">
+        <p class="cs-toc__heading">On this page</p>
+        <ul class="cs-toc__list">
+            <li><a href="#section-problem" class="cs-toc__link">Problem</a></li>
+            <li><a href="#section-research" class="cs-toc__link">Research</a></li>
+            <li><a href="#section-personas" class="cs-toc__link">User Personas</a></li>
+            <li><a href="#section-ia" class="cs-toc__link">IA Improvements</a></li>
+            <li><a href="#section-booking" class="cs-toc__link">Booking Redesign</a></li>
+            <li><a href="#section-flow" class="cs-toc__link">Booking Flow</a></li>
+            <li><a href="#section-conclusion" class="cs-toc__link">Conclusion</a></li>
+        </ul>
+    </nav>
+
     <script src="js/main.js"></script>
+
+    <!-- TOC active-section highlight -->
+    <script>
+        (function () {
+            var sections = [];
+            document.querySelectorAll('.cs-toc__link').forEach(function (link) {
+                var el = document.getElementById(link.getAttribute('href').slice(1));
+                if (el) sections.push({ el: el, link: link });
+            });
+
+            var observer = new IntersectionObserver(function (entries) {
+                entries.forEach(function (entry) {
+                    var match = sections.find(function (s) { return s.el === entry.target; });
+                    if (!match) return;
+                    if (entry.isIntersecting) {
+                        sections.forEach(function (s) { s.link.classList.remove('is-active'); });
+                        match.link.classList.add('is-active');
+                    }
+                });
+            }, { rootMargin: '-20% 0px -70% 0px' });
+
+            sections.forEach(function (s) { observer.observe(s.el); });
+        })();
+    </script>
 </body>
 
 </html>

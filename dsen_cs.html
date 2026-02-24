@@ -72,6 +72,66 @@
         .page-case-study .cs-overview {
             border-top: 3px solid var(--cs-brand);
         }
+
+        /* ================================================
+           TABLE OF CONTENTS — desktop only (≥1440px)
+           ================================================ */
+        .cs-toc {
+            display: none;
+        }
+
+        @media (min-width: 1440px) {
+            .cs-toc {
+                display: block;
+                position: fixed;
+                top: 50%;
+                transform: translateY(-50%);
+                right: 1.75rem;
+                width: 148px;
+                z-index: 50;
+            }
+
+            .cs-toc__heading {
+                font-size: 0.68rem;
+                font-weight: 700;
+                letter-spacing: 0.12em;
+                text-transform: uppercase;
+                color: var(--color-text-muted);
+                margin: 0 0 0.75rem 0.6rem;
+            }
+
+            .cs-toc__list {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+                display: flex;
+                flex-direction: column;
+                gap: 0.1rem;
+            }
+
+            .cs-toc__link {
+                font-size: 0.78rem;
+                color: var(--color-text-muted);
+                text-decoration: none;
+                display: block;
+                padding: 0.3rem 0.6rem;
+                border-left: 2px solid transparent;
+                border-radius: 0 4px 4px 0;
+                transition: color 0.2s, border-color 0.2s, background 0.2s;
+                line-height: 1.35;
+            }
+
+            .cs-toc__link:hover {
+                color: var(--color-text-primary);
+                background: rgba(0, 0, 0, 0.04);
+            }
+
+            .cs-toc__link.is-active {
+                color: var(--cs-brand);
+                border-left-color: var(--cs-brand);
+                font-weight: 500;
+            }
+        }
     </style>
 </head>
 
@@ -153,9 +213,8 @@
             </div>
 
             <!-- Cover image -->
-            <div class="img-placeholder img-placeholder--hero">
-                <span>Cover Image</span>
-            </div>
+            <img src="images/dsen/dsen-cover.png" alt="DSEN Cover"
+                style="width:100%; border-radius:16px; display:block;" />
 
             <!-- Overview stats strip -->
             <div class="cs-overview">
@@ -184,7 +243,7 @@
     <!-- ====================================================================
      2. INTRODUCTION + PROBLEM
   ===================================================================== -->
-    <section class="section">
+    <section class="section" id="section-intro">
         <div class="container">
             <div class="cs-two-col">
 
@@ -217,10 +276,7 @@
 
             </div>
 
-            <!-- Problem visual -->
-            <div class="img-placeholder" style="margin-top: 3rem;">
-                <span>Problem / Context Diagram</span>
-            </div>
+
 
         </div>
     </section>
@@ -229,7 +285,7 @@
     <!-- ====================================================================
      3. USERS + SOLUTION
   ===================================================================== -->
-    <section class="section cs-alt-bg">
+    <section class="section cs-alt-bg" id="section-users">
         <div class="container">
 
             <!-- Users -->
@@ -242,9 +298,8 @@
 
             <div class="cs-persona-grid">
                 <div class="cs-persona">
-                    <div class="img-placeholder img-placeholder--square">
-                        <span>Student Persona</span>
-                    </div>
+                    <img src="images/dsen/dsen-persona-student.png" alt="Student Persona"
+                        style="width:100%; aspect-ratio:1/1; object-fit:cover; border-radius:12px; display:block;" />
                     <h3 class="cs-persona__name">The Student</h3>
                     <p class="cs-persona__role">Age 18–23 · College Student · Delhi NCR</p>
                     <p class="cs-body">Comfortable with AI tools, creativity apps, cameras, and Google services. Skilled
@@ -252,9 +307,8 @@
                         giving anyone a chance.</p>
                 </div>
                 <div class="cs-persona">
-                    <div class="img-placeholder img-placeholder--square">
-                        <span>Business Persona</span>
-                    </div>
+                    <img src="images/dsen/dsen-persona-business.png" alt="Business Persona"
+                        style="width:100%; aspect-ratio:1/1; object-fit:cover; border-radius:12px; display:block;" />
                     <h3 class="cs-persona__name">The Local Business</h3>
                     <p class="cs-persona__role">General stores · Bakeries · Barber shops · Local kitchens</p>
                     <p class="cs-body">Needs small digital tasks done - Google Maps listing, online menu, banners. Can't
@@ -279,9 +333,8 @@
                     because <strong>the complexity sits entirely on the builder's side - me.</strong>
                 </p>
 
-                <div class="img-placeholder img-placeholder--wide">
-                    <span>DSEN App Screens - Student & Business Side</span>
-                </div>
+                <img src="images/dsen/dsen-solution.png" alt="DSEN App Screens — Student &amp; Business Side"
+                    style="width:100%; border-radius:16px; display:block;" />
             </div>
 
         </div>
@@ -291,7 +344,7 @@
     <!-- ====================================================================
      4. 3 KEY DESIGN DECISIONS
   ===================================================================== -->
-    <section class="section">
+    <section class="section" id="section-decisions">
         <div class="container">
 
             <p class="cs-section-label">Design Decisions</p>
@@ -319,9 +372,8 @@
                             they even post.
                         </p>
                     </div>
-                    <div class="img-placeholder">
-                        <span>Kaam Karayein - Templated Gigs Screen</span>
-                    </div>
+                    <img src="images/dsen/dsen-decision-1.png" alt="Kaam Karayein — Templated Gigs Screen"
+                        style="width:100%; border-radius:12px; display:block;" />
                 </div>
             </div>
 
@@ -332,9 +384,8 @@
                     <h3 class="cs-decision__title">Review Screen for Both Sides</h3>
                 </div>
                 <div class="cs-decision__body cs-decision__body--reverse">
-                    <div class="img-placeholder">
-                        <span>Review Gig - Student & Business Side</span>
-                    </div>
+                    <img src="images/dsen/dsen-decision-2.png" alt="Review Gig — Student &amp; Business Side"
+                        style="width:100%; border-radius:12px; display:block;" />
                     <div class="cs-decision__text">
                         <p class="cs-body">
                             Both users felt overwhelmed at the final commitment step. A review screen was designed for
@@ -367,9 +418,8 @@
                             keeps students focused on academics rather than constantly checking for updates.
                         </p>
                     </div>
-                    <div class="img-placeholder">
-                        <span>My Gigs - Status Tracking & Messages Screen</span>
-                    </div>
+                    <img src="images/dsen/dsen-decision-3.png" alt="My Gigs — Status Tracking &amp; Messages Screen"
+                        style="width:100%; border-radius:12px; display:block;" />
                 </div>
             </div>
 
@@ -380,7 +430,7 @@
     <!-- ====================================================================
      5. USER FLOW
   ===================================================================== -->
-    <section class="section cs-alt-bg">
+    <section class="section cs-alt-bg" id="section-flow">
         <div class="container">
 
             <p class="cs-section-label">User Flow</p>
@@ -391,15 +441,12 @@
             </p>
 
             <!-- Full-width flow diagram -->
-            <div class="img-placeholder img-placeholder--wide">
-                <span>Common Onboarding Flow - Verified / Restricted</span>
-            </div>
-            <div class="img-placeholder img-placeholder--wide" style="margin-top: 2rem;">
-                <span>Student Flow Diagram</span>
-            </div>
-            <div class="img-placeholder img-placeholder--wide" style="margin-top: 2rem;">
-                <span>Business Flow Diagram</span>
-            </div>
+            <img src="images/dsen/dsen-flow-onboarding.png" alt="Common Onboarding Flow"
+                style="width:100%; border-radius:16px; display:block;" />
+            <img src="images/dsen/dsen-flow-student.png" alt="Student Flow Diagram"
+                style="width:100%; border-radius:16px; display:block; margin-top:2rem;" />
+            <img src="images/dsen/dsen-flow-business.png" alt="Business Flow Diagram"
+                style="width:100%; border-radius:16px; display:block; margin-top:2rem;" />
 
         </div>
     </section>
@@ -408,7 +455,7 @@
     <!-- ====================================================================
      6. CONCLUSION - ASSUMPTIONS / TESTS / CHANGES
   ===================================================================== -->
-    <section class="section">
+    <section class="section" id="section-conclusion">
         <div class="container">
 
             <p class="cs-section-label">Conclusion</p>
@@ -471,10 +518,7 @@
 
             </div>
 
-            <!-- Supporting visual -->
-            <div class="img-placeholder" style="margin-top: 3rem;">
-                <span>Testing Notes / Iteration Comparison</span>
-            </div>
+
 
         </div>
     </section>
@@ -511,7 +555,44 @@
         </div>
     </footer>
 
+    <!-- ================================================================
+         TABLE OF CONTENTS (desktop-only sticky nav)
+    ================================================================ -->
+    <nav class="cs-toc" aria-label="Page contents">
+        <p class="cs-toc__heading">On this page</p>
+        <ul class="cs-toc__list">
+            <li><a href="#section-intro" class="cs-toc__link">Introduction</a></li>
+            <li><a href="#section-intro" class="cs-toc__link">Problem</a></li>
+            <li><a href="#section-users" class="cs-toc__link">Users &amp; Solution</a></li>
+            <li><a href="#section-decisions" class="cs-toc__link">Design Decisions</a></li>
+            <li><a href="#section-flow" class="cs-toc__link">User Flow</a></li>
+            <li><a href="#section-conclusion" class="cs-toc__link">Conclusion</a></li>
+        </ul>
+    </nav>
+
     <script src="js/main.js"></script>
+
+    <!-- TOC active-section highlight -->
+    <script>
+        (function () {
+            var sections = [];
+            document.querySelectorAll('.cs-toc__link').forEach(function (link) {
+                var el = document.getElementById(link.getAttribute('href').slice(1));
+                if (el) sections.push({ el: el, link: link });
+            });
+            var observer = new IntersectionObserver(function (entries) {
+                entries.forEach(function (entry) {
+                    var match = sections.find(function (s) { return s.el === entry.target; });
+                    if (!match) return;
+                    if (entry.isIntersecting) {
+                        sections.forEach(function (s) { s.link.classList.remove('is-active'); });
+                        match.link.classList.add('is-active');
+                    }
+                });
+            }, { rootMargin: '-20% 0px -70% 0px' });
+            sections.forEach(function (s) { observer.observe(s.el); });
+        })();
+    </script>
 </body>
 
 </html>
