@@ -4,381 +4,57 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>document.documentElement.classList.add('js');</script>
+
     <title>From Brief to Build 01: Before I Opened Figma - Vivek Singh</title>
     <meta name="description"
         content="Documenting my entire UX process in public. This is where it starts: the brief, the scope, and the real problem hiding underneath." />
 
-    <!-- Google Fonts -->
+    <!-- Fonts: Bricolage Grotesque (display) · Space Mono (labels) · Inter (body) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap"
         rel="stylesheet" />
 
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/redesign.css" />
 
-    <style>
-        /* ── Series palette ── */
-        :root {
-            --series-bg: #F5F0E8;
-            --series-ink: #1A1A1A;
-            --series-accent: #C17B3F;
-            --series-accent-light: #F0E4D0;
-            --series-muted: #6B6560;
-            --series-border: #DDD6C8;
-        }
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23ff3d23'/><text x='50%25' y='56%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-weight='800' font-size='19' fill='white'>V</text></svg>" />
 
-        /* ── Page override ── */
-        .ftb-page {
-            background: var(--series-bg);
-            color: var(--series-ink);
-        }
-
-        /* ── Series label bar ── */
-        .series-bar {
-            background: var(--series-ink);
-            color: var(--series-bg);
-            padding: 0.6rem 0;
-            text-align: center;
-            font-family: 'Inter', sans-serif;
-            font-size: 12px;
-            font-weight: 600;
-            letter-spacing: 0.12em;
-            text-transform: uppercase;
-        }
-
-        .series-bar span {
-            color: var(--series-accent);
-            margin: 0 0.5rem;
-        }
-
-        /* ── Header section ── */
-        .ftb-header {
-            padding-top: calc(var(--nav-height, 72px) + 4rem);
-            padding-bottom: 0;
-            background: var(--series-bg);
-        }
-
-        .ftb-header .container {
-            max-width: 720px;
-            margin: 0 auto;
-            padding: 0 1.5rem;
-        }
-
-        .back-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            font-size: 14px;
-            color: var(--series-muted);
-            text-decoration: none;
-            font-family: 'Inter', sans-serif;
-            margin-bottom: 2.5rem;
-            transition: color 0.2s;
-        }
-
-        .back-link:hover {
-            color: var(--series-accent);
-        }
-
-        .episode-label {
-            display: inline-block;
-            background: var(--series-accent-light);
-            color: var(--series-accent);
-            font-family: 'Inter', sans-serif;
-            font-size: 12px;
-            font-weight: 600;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            padding: 5px 12px;
-            border-radius: 100px;
-            margin-bottom: 1.25rem;
-        }
-
-        .ftb-title {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(2rem, 5vw, 3rem);
-            font-weight: 700;
-            line-height: 1.2;
-            color: var(--series-ink);
-            margin: 0 0 1.5rem;
-        }
-
-        .ftb-meta {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            font-family: 'Inter', sans-serif;
-            font-size: 13px;
-            color: var(--series-muted);
-            margin-bottom: 2.5rem;
-            flex-wrap: wrap;
-        }
-
-        .ftb-meta-dot {
-            width: 3px;
-            height: 3px;
-            border-radius: 50%;
-            background: var(--series-border);
-            display: inline-block;
-        }
-
-        .ftb-tags {
-            display: flex;
-            gap: 8px;
-            flex-wrap: wrap;
-            margin-bottom: 3rem;
-        }
-
-        .ftb-tag {
-            font-family: 'Inter', sans-serif;
-            font-size: 12px;
-            color: var(--series-muted);
-            border: 1px solid var(--series-border);
-            padding: 4px 12px;
-            border-radius: 100px;
-            background: transparent;
-        }
-
-        .ftb-divider {
-            border: none;
-            border-top: 1px solid var(--series-border);
-            margin: 0;
-        }
-
-        /* ── Article body ── */
-        .ftb-body-section {
-            background: var(--series-bg);
-            padding: 3.5rem 0 6rem;
-        }
-
-        .ftb-body-section .container {
-            max-width: 720px;
-            margin: 0 auto;
-            padding: 0 1.5rem;
-        }
-
-        .ftb-body {
-            font-family: 'Inter', sans-serif;
-            font-size: 17px;
-            font-weight: 400;
-            line-height: 1.85;
-            color: var(--series-ink);
-        }
-
-        .ftb-body p {
-            margin: 0 0 1.75rem;
-        }
-
-        .ftb-body h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.6rem;
-            font-weight: 700;
-            color: var(--series-ink);
-            margin: 3rem 0 1.25rem;
-            line-height: 1.3;
-        }
-
-        .ftb-body h3 {
-            font-family: 'Inter', sans-serif;
-            font-size: 1rem;
-            font-weight: 600;
-            color: var(--series-ink);
-            margin: 2rem 0 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 0.06em;
-        }
-
-        .ftb-body strong {
-            font-weight: 600;
-            color: var(--series-ink);
-        }
-
-        .ftb-body em {
-            font-style: italic;
-        }
-
-        /* Pull quote */
-        .ftb-pull {
-            font-family: 'Playfair Display', serif;
-            font-style: italic;
-            font-size: 1.3rem;
-            line-height: 1.6;
-            color: var(--series-accent);
-            border-left: 3px solid var(--series-accent);
-            padding: 0.75rem 0 0.75rem 1.5rem;
-            margin: 2.5rem 0;
-        }
-
-        /* Scope cards */
-        .scope-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1rem;
-            margin: 1.5rem 0 2rem;
-        }
-
-        @media (max-width: 560px) {
-            .scope-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        .scope-card {
-            background: #EDE8DF;
-            border: 1px solid var(--series-border);
-            border-radius: 10px;
-            padding: 1.25rem;
-        }
-
-        .scope-card-label {
-            font-family: 'Inter', sans-serif;
-            font-size: 11px;
-            font-weight: 600;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            color: var(--series-accent);
-            margin-bottom: 0.75rem;
-        }
-
-        .scope-card ul {
-            margin: 0;
-            padding: 0 0 0 1rem;
-            font-size: 14px;
-            color: var(--series-ink);
-            line-height: 1.7;
-        }
-
-        .scope-card ul li {
-            margin-bottom: 0.35rem;
-        }
-
-        /* Screens list */
-        .screens-list {
-            list-style: none;
-            padding: 0;
-            margin: 1.25rem 0 2rem;
-            display: flex;
-            flex-direction: column;
-            gap: 0.75rem;
-        }
-
-        .screens-list li {
-            display: flex;
-            align-items: flex-start;
-            gap: 12px;
-            font-size: 15px;
-            color: var(--series-ink);
-            line-height: 1.5;
-        }
-
-        .screens-list li .num {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.1rem;
-            color: var(--series-accent);
-            font-weight: 700;
-            min-width: 24px;
-            margin-top: 1px;
-        }
-
-        /* Next up banner */
-        .next-up {
-            background: var(--series-ink);
-            border-radius: 12px;
-            padding: 1.75rem 2rem;
-            margin-top: 3.5rem;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 1.5rem;
-            flex-wrap: wrap;
-        }
-
-        .next-up-label {
-            font-family: 'Inter', sans-serif;
-            font-size: 11px;
-            font-weight: 600;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            color: var(--series-accent);
-            margin-bottom: 0.4rem;
-        }
-
-        .next-up-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.2rem;
-            color: var(--series-bg);
-            font-weight: 600;
-        }
-
-        .next-up-desc {
-            font-family: 'Inter', sans-serif;
-            font-size: 13px;
-            color: #9E9890;
-            margin-top: 0.3rem;
-        }
-
-        /* Footer override */
-        .ftb-footer {
-            background: var(--series-ink);
-            color: var(--series-bg);
-            padding: 1.5rem 0;
-            font-family: 'Inter', sans-serif;
-            font-size: 13px;
-            text-align: center;
-            opacity: 0.9;
-        }
-    </style>
+    <!-- Vercel Analytics -->
+    <script defer src="/_vercel/insights/script.js"></script>
 </head>
 
-<body class="ftb-page">
-
-    <!-- SERIES BAR -->
-    <div class="series-bar">
-        From Brief to Build · A Public UX Documentation Series
-    </div>
+<body>
 
     <!-- NAVIGATION -->
-    <nav class="nav" id="main-nav" role="navigation" aria-label="Main navigation"
-        style="background: var(--series-bg); border-bottom: 1px solid var(--series-border);">
-        <div class="container nav__inner">
-            <a href="index.html" class="nav__logo" aria-label="Go to homepage" style="color: var(--series-ink);">vs.</a>
-            <ul class="nav__links" role="list">
-                <li><a href="index.html" class="nav__link" style="color: var(--series-muted);">Home</a></li>
-                <li><a href="work.html" class="nav__link" style="color: var(--series-muted);">Work</a></li>
-                <li><a href="blog.html" class="nav__link active" style="color: var(--series-ink);">Writing</a></li>
+    <nav class="nav" id="main-nav" aria-label="Main navigation">
+        <div class="nav__inner">
+            <a href="index.html" class="nav__logo" aria-label="Vivek Singh - home">vivek<b>.</b></a>
+
+            <ul class="nav__links">
+                <li><a href="index.html" class="nav__link">Home</a></li>
+                <li><a href="index.html#work" class="nav__link">Work</a></li>
+                <li><a href="index.html#writing" class="nav__link active">Writing</a></li>
+                <li><a href="index.html#about" class="nav__link">About</a></li>
                 <li>
-                    <a href="Vivek_Singh_Resume.pdf" download="Vivek_Singh_Resume.pdf" class="btn-primary nav__resume"
-                        aria-label="Download resume PDF">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
-                            aria-hidden="true">
-                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-                            <polyline points="7 10 12 15 17 10" />
-                            <line x1="12" y1="15" x2="12" y2="3" />
-                        </svg>
-                        Resume
-                    </a>
+                    <a href="Vivek_Singh_Resume.pdf" download class="btn btn--solid nav__resume">Résumé ↓</a>
                 </li>
             </ul>
-            <button class="nav__hamburger" id="nav-hamburger" aria-label="Toggle navigation menu" aria-expanded="false"
-                aria-controls="nav-mobile-menu">
-                <span class="nav__hamburger-bar" style="background: var(--series-ink);"></span>
-                <span class="nav__hamburger-bar" style="background: var(--series-ink);"></span>
-                <span class="nav__hamburger-bar" style="background: var(--series-ink);"></span>
+
+            <button class="nav__hamburger" id="nav-hamburger" aria-label="Toggle menu" aria-expanded="false"
+                aria-controls="nav-mobile">
+                <span></span><span></span><span></span>
             </button>
         </div>
-        <div class="nav__mobile-menu" id="nav-mobile-menu" role="menu"
-            style="background: var(--series-bg); border-top: 1px solid var(--series-border);">
-            <a href="index.html" class="nav__mobile-link" role="menuitem">Home</a>
-            <a href="work.html" class="nav__mobile-link" role="menuitem">Work</a>
-            <a href="blog.html" class="nav__mobile-link" role="menuitem">Writing</a>
-            <div class="nav__mobile-resume">
-                <a href="Vivek_Singh_Resume.pdf" download="Vivek_Singh_Resume.pdf" class="btn-primary nav__mobile-link"
-                    style="justify-content:center;" role="menuitem">
-                    Download Resume
-                </a>
-            </div>
+
+        <div class="nav__mobile" id="nav-mobile">
+            <a href="index.html">Home</a>
+            <a href="index.html#work">Work</a>
+            <a href="index.html#writing">Writing</a>
+            <a href="index.html#about">About</a>
+            <a href="Vivek_Singh_Resume.pdf" download class="btn btn--solid">Download résumé ↓</a>
         </div>
     </nav>
 
@@ -394,7 +70,7 @@
                 Back to Writings
             </a>
 
-            <div class="episode-label">Episode 01</div>
+            <div class="episode-label">UX Documentation Series · Episode 01</div>
 
             <h1 class="ftb-title">Before I Opened Figma</h1>
 
@@ -424,28 +100,31 @@
 
                 <p>Most designers open Figma before they understand the problem. I used to do that too.</p>
 
-                <p>This is the first post in a public documentation of my IBM UX Capstone: a real project, real
+                <p>This is the first post in a public documentation of my <strong>IBM UX Capstone:</strong> a real project, real
                     deliverables, real process. No skipping steps, no showing only the polished parts. Every decision,
                     every insight, every mistake, documented as it happens.</p>
 
                 <h2>The Client</h2>
 
                 <p>Sarah Chen runs ArtisanCrafts, a business that sells handcrafted goods made by independent artisans.
-                    She's been doing it through offline seasonal markets, and it's worked. But she wants to grow, and
+                    She's been doing it through offline seasonal markets, Instagram and it worked. But she wants to
+                    grow, and
                     that means going online.</p>
 
-                <p>The ask: a responsive website for both mobile and desktop. Premium looking. Trust-building. Something
+                <p>The ask: a responsive website for both mobile and desktop. Looks authentic. Trust-building. Something
                     that justifies the pricing and supports the artisans behind every product.</p>
 
                 <h2>What the Brief Actually Said vs. What It Meant</h2>
 
-                <p>This is where most designers stop reading and start designing. I didn't.</p>
+                <p>I didn't just read the brief but analysed it and tried to understand more than what was explicitly
+                    stated.</p>
 
                 <p>Sarah said she wants the site to justify the premium pricing of her products. But if you sit with
                     that for a moment, what she actually needs is for <strong>strangers on the internet to trust her
                         enough to pay above-average prices for products they can't touch.</strong></p>
 
-                <div class="ftb-pull">Justifying premium pricing is the business goal. Building trust with strangers
+                <div class="ftb-pull">Justifying premium pricing is one of the business goals. Building trust with
+                    strangers
                     online. That is the real design problem.</div>
 
                 <p>The stated needs were clear: responsive, easy to browse, easy to purchase. But the implied needs were
@@ -519,17 +198,19 @@
                 <h2>The Real Challenge</h2>
 
                 <p>It's not about aesthetics alone. It's making a stranger feel confident enough to spend real money on
-                    something handmade, from someone they've never met, through a screen.</p>
+                    something handmade, from someone they've never met, through a screen. Note: This is an assumed
+                    problem statement a better one will be stated in the Define phase later in this course.</p>
 
                 <div class="ftb-pull">That's the problem I'm designing for. Everything else is just execution.</div>
 
-                <p>Module 1 taught me something I already knew but hadn't applied with this much intention: the brief is
+                <p><strong>Module 1</strong> taught me something I already knew but hadn't applied with this much
+                    intention: the brief is
                     never the whole picture. The real problem is always one layer deeper. Finding it before you open any
                     tool is what separates a designer who solves problems from one who just makes screens.</p>
 
                 <div class="next-up">
                     <div>
-                        <div class="next-up-label">Up Next: Episode 02</div>
+                        <div class="next-up-label">Coming Soon: Episode 02</div>
                         <div class="next-up-title">Empathize and Define: Learning from Competitors and Users</div>
                         <div class="next-up-desc">Competitive analysis, user interviews, empathy maps, personas, and
                             writing a problem statement. The full research phase, documented.</div>
@@ -542,24 +223,91 @@
                         href="mailto:hello@uixvivek.in"
                         style="color: var(--series-accent); text-decoration: none;">hello@uixvivek.in</a></p>
 
-                <p style="margin-top: 1.5rem; font-size: 13px; color: var(--series-muted);">This series documents my
-                    journey through the <a href="AFFILIATE_LINK_HERE"
-                        style="color: var(--series-accent); text-decoration: none;">IBM UX Design Capstone on
-                        Coursera</a>. If you want to follow the same path, that is where it starts.</p>
-
             </div>
         </div>
     </section>
 
-    <!-- FOOTER -->
-    <footer class="ftb-footer">
-        &copy; 2026 Vivek Singh. All rights reserved.
+    <!-- ====================================================================
+         FOOTER / CONTACT
+    ===================================================================== -->
+    <footer class="section footer" id="contact">
+        <div class="wrap">
+            <span class="eyebrow">Contact</span>
+            <h2 class="display footer__cta">
+                Let's build something <a href="#" id="open-contact-modal-2">worth shipping.</a>
+            </h2>
+
+            <div class="footer__row">
+                <div class="footer__socials">
+                    <a href="https://www.linkedin.com/in/uixvivek" target="_blank" rel="noopener" aria-label="LinkedIn">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                            <rect x="2" y="9" width="4" height="12" />
+                            <circle cx="4" cy="4" r="2" />
+                        </svg>
+                    </a>
+                    <a href="https://x.com/uix_vivek" target="_blank" rel="noopener" aria-label="X (Twitter)">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M4 4l11.733 16h4.267l-11.733 -16z" />
+                            <path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772" />
+                        </svg>
+                    </a>
+                    <a href="https://www.instagram.com/uixvivek/" target="_blank" rel="noopener" aria-label="Instagram">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                        </svg>
+                    </a>
+                    <a href="mailto:hello@uixvivek.in" aria-label="Email">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect width="20" height="16" x="2" y="4" rx="2" />
+                            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                        </svg>
+                    </a>
+                </div>
+                <span class="footer__meta">© 2026 Vivek Singh · Designed &amp; built in New Delhi</span>
+            </div>
+        </div>
     </footer>
 
-    <script src="js/main.js"></script>
+    <!-- ====================================================================
+         CONTACT MODAL
+    ===================================================================== -->
+    <div class="modal-overlay" id="contact-modal" aria-hidden="true">
+        <div class="modal" role="dialog" aria-labelledby="modal-title" aria-modal="true">
+            <div class="modal__head">
+                <div>
+                    <h3 id="modal-title" class="modal__title">Say hi</h3>
+                    <p class="modal__sub">// replies within a day or two</p>
+                </div>
+                <button class="modal__close" id="close-contact-modal" aria-label="Close">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="18" y1="6" x2="6" y2="18" />
+                        <line x1="6" y1="6" x2="18" y2="18" />
+                    </svg>
+                </button>
+            </div>
+            <form action="https://formspree.io/f/xeelogpj" method="POST">
+                <div class="field">
+                    <label for="c-email">Your email</label>
+                    <input type="email" id="c-email" name="email" placeholder="you@example.com" required />
+                </div>
+                <div class="field">
+                    <label for="c-message">Message</label>
+                    <textarea id="c-message" name="message" placeholder="What are you building?" required></textarea>
+                </div>
+                <button type="submit" class="btn btn--solid" style="width:100%;">Send message →</button>
+            </form>
+        </div>
+    </div>
 
-    <!-- Vercel Analytics -->
-    <script defer src="/_vercel/insights/script.js"></script>
+    <script src="js/redesign.js"></script>
 </body>
 
 </html>

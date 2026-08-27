@@ -5,273 +5,304 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- SEO -->
-    <title>Vivek Singh | Product Designer</title>
-    <meta name="description" content="Portfolio of Vivek Singh | Product Designer crafting simple, usable products." />
+    <!-- Mark JS as available before first paint so entrance states only apply with JS -->
+    <script>document.documentElement.classList.add('js');</script>
 
-    <!-- Google Fonts: Inter (Sans) & Playfair Display (Serif) -->
+    <!-- SEO -->
+    <title>Vivek Singh - Product Designer</title>
+    <meta name="description"
+        content="Vivek Singh is a product designer in New Delhi closing the gap between how products look and how they actually work." />
+
+    <!-- Fonts: Bricolage Grotesque (display) · Space Mono (labels) · Inter (body) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap"
         rel="stylesheet" />
 
-    <!-- Main stylesheet -->
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/redesign.css" />
 
-    <!-- Favicon -->
+    <!-- Favicon: vermilion artboard tile -->
     <link rel="icon"
-        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%231a56db'/><text x='50%' y='54%' dominant-baseline='middle' text-anchor='middle' font-family='Inter,sans-serif' font-weight='700' font-size='18' fill='white'>VS</text></svg>" />
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23ff3d23'/><text x='50%25' y='56%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-weight='800' font-size='19' fill='white'>V</text></svg>" />
+
     <!-- Vercel Analytics -->
     <script defer src="/_vercel/insights/script.js"></script>
 </head>
 
-<body class="page-home">
+<body>
 
     <!-- ====================================================================
-       NAVIGATION
-  ===================================================================== -->
-    <nav class="nav" id="main-nav" role="navigation" aria-label="Main navigation">
-        <div class="container nav__inner">
+         NAV
+    ===================================================================== -->
+    <nav class="nav" id="main-nav" aria-label="Main navigation">
+        <div class="nav__inner">
+            <a href="#home" class="nav__logo" aria-label="Vivek Singh - home">uixvivek<b>.</b></a>
 
-            <!-- Brand wordmark -->
-            <a href="#home" class="nav__logo" aria-label="Go to top">vs.</a>
-
-            <!-- Desktop links -->
-            <ul class="nav__links" role="list">
+            <ul class="nav__links">
                 <li><a href="#home" class="nav__link active">Home</a></li>
                 <li><a href="#work" class="nav__link">Work</a></li>
-                <li><a href="blog.html" class="nav__link">Writing</a></li>
+                <li><a href="#writing" class="nav__link">Writing</a></li>
+                <li><a href="#about" class="nav__link">About</a></li>
                 <li>
-                    <a href="Vivek_Singh_Resume.pdf" download="Vivek_Singh_Resume.pdf" class="btn-primary nav__resume"
-                        aria-label="Download resume PDF">
-                        <!-- Download icon -->
-                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
-                            aria-hidden="true">
-                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-                            <polyline points="7 10 12 15 17 10" />
-                            <line x1="12" y1="15" x2="12" y2="3" />
-                        </svg>
-                        Resume
-                    </a>
+                    <a href="Vivek_Singh_Resume.pdf" download class="btn btn--solid nav__resume">Résumé ↓</a>
                 </li>
             </ul>
 
-            <!-- Hamburger button for mobile -->
-            <button class="nav__hamburger" id="nav-hamburger" aria-label="Toggle navigation menu" aria-expanded="false"
-                aria-controls="nav-mobile-menu">
-                <span class="nav__hamburger-bar"></span>
-                <span class="nav__hamburger-bar"></span>
-                <span class="nav__hamburger-bar"></span>
+            <button class="nav__hamburger" id="nav-hamburger" aria-label="Toggle menu" aria-expanded="false"
+                aria-controls="nav-mobile">
+                <span></span><span></span><span></span>
             </button>
         </div>
 
-        <!-- Mobile slide-down drawer -->
-        <div class="nav__mobile-menu" id="nav-mobile-menu" role="menu">
-            <a href="#home" class="nav__mobile-link" role="menuitem">Home</a>
-            <a href="#work" class="nav__mobile-link" role="menuitem">Work</a>
-            <a href="blog.html" class="nav__mobile-link" role="menuitem">Writing</a>
-            <div class="nav__mobile-resume">
-                <a href="Vivek_Singh_Resume.pdf" download="Vivek_Singh_Resume.pdf" class="btn-primary nav__mobile-link"
-                    style="justify-content:center;" role="menuitem">
-                    Download Resume
-                </a>
-            </div>
+        <div class="nav__mobile" id="nav-mobile">
+            <a href="#home">Home</a>
+            <a href="#work">Work</a>
+            <a href="#writing">Writing</a>
+            <a href="#about">About</a>
+            <a href="Vivek_Singh_Resume.pdf" download class="btn btn--solid">Download résumé ↓</a>
         </div>
     </nav>
 
     <!-- ====================================================================
-       HERO SECTION
-  ===================================================================== -->
-    <section class="hero section" id="home">
-        <div class="container hero__inner">
-            <span class="hero__badge">Product Designer</span>
-            <h1 class="hero__name"><span class="hero__name-first">Vivek</span> <span
-                    class="hero__name-last">Singh</span></h1>
-            <p class="hero__tagline">
-                I build structured digital products from idea to scalable systems.
-            </p>
+         HERO
+    ===================================================================== -->
+    <header class="hero wrap" id="home">
+        <div class="hero__grid-frame">artboard · home · 1/1</div>
 
-            <div class="hero__actions">
-                <a href="#work" class="btn-primary">View Work</a>
-                <button id="open-contact-modal" class="btn-outline">Say Hi !</button>
+        <p class="eyebrow hero__eyebrow">Product Designer · New Delhi</p>
+
+        <h1 class="display hero__headline">
+            I close the gap between how products <span class="light">look</span> and how they
+            <span class="mark">work</span>.
+        </h1>
+
+        <p class="hero__sub">
+            I'm a product designer who thinks in systems - turning a messy brief into
+            structured, human-centered products that actually ship.
+        </p>
+
+        <div class="hero__actions">
+            <a href="#work" class="btn btn--solid">View work →</a>
+            <button class="btn btn--ghost" id="open-contact-modal">Say hi</button>
+        </div>
+
+        <p class="hero__status">
+            <span class="dot" aria-hidden="true"></span>
+            Open to new roles &amp; design collaborations
+        </p>
+
+        <!-- Decorative annotation layer (desktop only, aria-hidden) -->
+        <div class="cursor-tag" style="top: 27%; right: 1%;" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="#ff3d23">
+                <path d="M4 2l16 8-7 2-2 7z" />
+            </svg>
+            <span>Vivek</span>
+        </div>
+
+        <div class="annotate" style="top: 52%; right: 2%;" aria-hidden="true">
+            <svg width="64" height="44" style="overflow: visible;">
+                <path class="annotate__line" d="M60 40 Q 20 34 4 4" />
+            </svg>
+            <div style="max-width: 15ch; margin-top: 2px;">// not decoration - decisions</div>
+        </div>
+    </header>
+
+    <!-- ====================================================================
+         WORK
+    ===================================================================== -->
+    <section class="section wrap" id="work">
+        <div class="work__head reveal">
+            <div>
+                <span class="eyebrow">Selected work</span>
+                <h2 class="display work__title">Case studies</h2>
             </div>
+            <a href="work.html" class="work__viewall">All projects →</a>
+        </div>
 
+        <div class="work__grid">
+            <a href="dsen_cs.html" class="case reveal">
+                <div class="case__media">
+                    <img src="images/DSEN.png" alt="DSEN - student gig marketplace app" />
+                    <span class="case__select" data-dim="DSEN · product design"></span>
+                </div>
+                <div class="case__body">
+                    <div>
+                        <div class="case__index">01 - 2025</div>
+                        <div class="case__name">DSEN</div>
+                        <div class="case__meta">Student gig marketplace · end-to-end product</div>
+                    </div>
+                    <span class="case__arrow" aria-hidden="true">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M7 17 17 7M9 7h8v8" />
+                        </svg>
+                    </span>
+                </div>
+            </a>
 
-
-            <hr class="hero__divider" />
-            <p class="hero__status">Currently open to new roles and design collaborations. Let's build something.</p>
-            <hr class="hero__divider" />
+            <a href="irctc_cs.html" class="case reveal">
+                <div class="case__media">
+                    <img src="images/IRCTC.png" alt="IRCTC - train booking app redesign" />
+                    <span class="case__select" data-dim="IRCTC · UX redesign"></span>
+                </div>
+                <div class="case__body">
+                    <div>
+                        <div class="case__index">02 - 2025</div>
+                        <div class="case__name">IRCTC</div>
+                        <div class="case__meta">Train booking redesign · UX case study</div>
+                    </div>
+                    <span class="case__arrow" aria-hidden="true">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M7 17 17 7M9 7h8v8" />
+                        </svg>
+                    </span>
+                </div>
+            </a>
         </div>
     </section>
 
     <!-- ====================================================================
-       WORK SECTION
-  ===================================================================== -->
-    <section class="work" id="work">
-        <div class="container">
-            <div class="work__header">
-                <h2 class="section-title" style="margin-bottom: 0;">Product Case Studies</h2>
-                <a href="work.html" class="work__view-all">View All</a>
-            </div>
-
-            <div class="work__grid">
-                <!-- Card 1 -->
-                <a href="dsen_cs.html" class="card">
-                    <img src="images/DSEN.png" alt="DSEN Case Study" class="card__image" />
-                    <div class="card__content">
-                        <h3 class="card__title">DSEN- Case Study</h3>
-                        <span class="card__arrow">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="1.5"
-                                    stroke-linecap="round" stroke-linejoin="round" />
-                            </svg>
-                        </span>
-                    </div>
-                </a>
-
-                <!-- Card 2 -->
-                <a href="irctc_cs.html" class="card">
-                    <img src="images/IRCTC.png" alt="IRCTC Case Study" class="card__image" />
-                    <div class="card__content">
-                        <h3 class="card__title">IRCTC- Case Study</h3>
-                        <span class="card__arrow">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="1.5"
-                                    stroke-linecap="round" stroke-linejoin="round" />
-                            </svg>
-                        </span>
-                    </div>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- ====================================================================
-       ABOUT SECTION
-  ===================================================================== -->
-    <section class="about section" id="about">
-        <div class="container about__inner">
-
-            <div class="about__content">
-                <h2 class="about__title">About Me</h2>
+         ABOUT
+    ===================================================================== -->
+    <section class="section about" id="about">
+        <div class="wrap about__inner">
+            <div class="about__content reveal">
+                <span class="eyebrow">About</span>
+                <h2 class="display about__title">Engineering student who designs like a systems thinker.</h2>
                 <p class="about__bio">
-                    I’m an engineering student who thinks in systems and designs digital products.
-                    Currently in my second year at Delhi Skill and Entrepreneurship University, I focus on product
-                    design and UX with a strong bias toward real-world execution.
-                    I’m particularly interested in the gap between how products look and how they actually work, and I
-                    design to close that gap.
+                    I'm in my 3rd year at G.B. Pant DSEU Campus, New Delhi, focused on product design and UX
+                    with a strong bias toward <strong>real-world execution</strong>. I care about the gap between
+                    how products look and how they actually work - and I design to close it.
                 </p>
-                <a href="blog.html" class="btn-primary btn-primary--white">
-                    Read Blogs
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                        stroke-linecap="round" stroke-linejoin="round" style="margin-left: 4px;">
-                        <path d="M5 12h14"></path>
-                        <path d="m12 5 7 7-7 7"></path>
-                    </svg>
-                </a>
-            </div>
-
-            <div class="about__photo-wrapper">
-                <div class="about__polaroid">
-                    <img src="images/profile.png" alt="Vivek Singh" class="about__image"
-                        onerror="this.style.display='none';" />
+                <div class="about__links">
+                    <a href="blog.html" class="btn btn--ghost">Read the writing →</a>
+                    <a href="Vivek_Singh_Resume.pdf" download class="btn btn--ghost">Résumé ↓</a>
                 </div>
             </div>
 
+            <div class="about__photo reveal">
+                <img src="images/profile.jpg" alt="Vivek Singh" onerror="this.closest('.about__photo').style.display='none'" />
+                <span class="about__tag">New Delhi, IN</span>
+            </div>
         </div>
     </section>
 
     <!-- ====================================================================
-       FOOTER
-  ===================================================================== -->
-    <footer class="footer" id="contact">
-        <div class="container"
-            style="text-align: center; display: flex; flex-direction: column; align-items: center; gap: 1.25rem;">
-            <div style="display: flex; gap: 1.25rem; align-items: center; color: var(--color-text-muted);">
-                <a href="https://www.linkedin.com/in/uixvivek" target="_blank" rel="noopener" aria-label="LinkedIn"
-                    style="color: inherit; transition: color 0.2s;"
-                    onmouseover="this.style.color='var(--color-text-primary)'" onmouseout="this.style.color='inherit'">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                        stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
-                        <rect x="2" y="9" width="4" height="12" />
-                        <circle cx="4" cy="4" r="2" />
-                    </svg>
+         WRITING
+    ===================================================================== -->
+    <section class="section writing" id="writing">
+        <div class="wrap">
+            <div class="writing__head reveal">
+                <div>
+                    <span class="eyebrow">Writing</span>
+                    <h2 class="display writing__title">Notes on process &amp; design</h2>
+                </div>
+                <a href="blog.html" class="work__viewall">All posts →</a>
+            </div>
+
+            <div class="reveal">
+                <a href="from-brief-to-build-01.html" class="post">
+                    <span class="post__date">22 Apr 2026</span>
+                    <span class="post__title">From Brief to Build 01: Before I Opened Figma</span>
+                    <span class="post__go" aria-hidden="true">→</span>
                 </a>
-                <a href="https://x.com/uix_vivek" target="_blank" rel="noopener" aria-label="X (Twitter)"
-                    style="color: inherit; transition: color 0.2s;"
-                    onmouseover="this.style.color='var(--color-text-primary)'" onmouseout="this.style.color='inherit'">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                        stroke-linecap="round" stroke-linejoin="round">
-                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                        <path d="M4 4l11.733 16h4.267l-11.733 -16z" />
-                        <path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772" />
-                    </svg>
+                <a href="blog-3.html" class="post">
+                    <span class="post__date">21 Apr 2026</span>
+                    <span class="post__title">If AI Tools Make You Panic, You Were Already Replaceable</span>
+                    <span class="post__go" aria-hidden="true">→</span>
                 </a>
-                <a href="https://www.instagram.com/uixvivek/" target="_blank" rel="noopener" aria-label="Instagram"
-                    style="color: inherit; transition: color 0.2s;"
-                    onmouseover="this.style.color='var(--color-text-primary)'" onmouseout="this.style.color='inherit'">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                        stroke-linecap="round" stroke-linejoin="round">
-                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
-                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
-                    </svg>
-                </a>
-                <a href="mailto:hello@uixvivek.in" aria-label="Email" style="color: inherit; transition: color 0.2s;"
-                    onmouseover="this.style.color='var(--color-text-primary)'" onmouseout="this.style.color='inherit'">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                        stroke-linecap="round" stroke-linejoin="round">
-                        <rect width="20" height="16" x="2" y="4" rx="2" />
-                        <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
-                    </svg>
+                <a href="blog-2.html" class="post">
+                    <span class="post__date">15 Feb 2026</span>
+                    <span class="post__title">How NOT to Use AI</span>
+                    <span class="post__go" aria-hidden="true">→</span>
                 </a>
             </div>
-            <span style="font-size: 0.8rem; color: var(--color-text-muted);">&copy; 2026 Vivek Singh. All rights
-                reserved.</span>
+        </div>
+    </section>
+
+    <!-- ====================================================================
+         FOOTER / CONTACT
+    ===================================================================== -->
+    <footer class="section footer" id="contact">
+        <div class="wrap">
+            <span class="eyebrow">Contact</span>
+            <h2 class="display footer__cta">
+                Let's build something <a href="#" id="open-contact-modal-2">worth shipping.</a>
+            </h2>
+
+            <div class="footer__row">
+                <div class="footer__socials">
+                    <a href="https://www.linkedin.com/in/uixvivek" target="_blank" rel="noopener" aria-label="LinkedIn">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                            <rect x="2" y="9" width="4" height="12" />
+                            <circle cx="4" cy="4" r="2" />
+                        </svg>
+                    </a>
+                    <a href="https://x.com/uix_vivek" target="_blank" rel="noopener" aria-label="X (Twitter)">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M4 4l11.733 16h4.267l-11.733 -16z" />
+                            <path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772" />
+                        </svg>
+                    </a>
+                    <a href="https://www.instagram.com/uixvivek/" target="_blank" rel="noopener" aria-label="Instagram">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                        </svg>
+                    </a>
+                    <a href="mailto:hello@uixvivek.in" aria-label="Email">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect width="20" height="16" x="2" y="4" rx="2" />
+                            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                        </svg>
+                    </a>
+                </div>
+                <span class="footer__meta">© 2026 Vivek Singh · Designed &amp; built in New Delhi</span>
+            </div>
         </div>
     </footer>
 
     <!-- ====================================================================
-       CONTACT MODAL
-  ===================================================================== -->
+         CONTACT MODAL
+    ===================================================================== -->
     <div class="modal-overlay" id="contact-modal" aria-hidden="true">
         <div class="modal" role="dialog" aria-labelledby="modal-title" aria-modal="true">
-            <div class="modal__header">
-                <h3 id="modal-title" class="modal__title">Get in Touch</h3>
-                <button class="modal__close" id="close-contact-modal" aria-label="Close modal">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            <div class="modal__head">
+                <div>
+                    <h3 id="modal-title" class="modal__title">Say hi</h3>
+                    <p class="modal__sub">// replies within a day or two</p>
+                </div>
+                <button class="modal__close" id="close-contact-modal" aria-label="Close">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                         stroke-linecap="round" stroke-linejoin="round">
-                        <line x1="18" y1="6" x2="6" y2="18"></line>
-                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                        <line x1="18" y1="6" x2="6" y2="18" />
+                        <line x1="6" y1="6" x2="18" y2="18" />
                     </svg>
                 </button>
             </div>
-            <form action="https://formspree.io/f/xeelogpj" method="POST" class="form">
-                <div class="form__group">
-                    <label for="contact-email" class="form__label">Your Email</label>
-                    <input type="email" id="contact-email" name="email" class="form__input"
-                        placeholder="hello@example.com" required>
+            <form action="https://formspree.io/f/xeelogpj" method="POST">
+                <div class="field">
+                    <label for="c-email">Your email</label>
+                    <input type="email" id="c-email" name="email" placeholder="you@example.com" required />
                 </div>
-                <div class="form__group">
-                    <label for="contact-message" class="form__label">Your Message</label>
-                    <textarea id="contact-message" name="message" class="form__textarea"
-                        placeholder="How can we collaborate?" required></textarea>
+                <div class="field">
+                    <label for="c-message">Message</label>
+                    <textarea id="c-message" name="message" placeholder="What are you building?" required></textarea>
                 </div>
-                <button type="submit" class="btn-primary" style="width: 100%; justify-content: center;">Send
-                    Message</button>
+                <button type="submit" class="btn btn--solid" style="width:100%;">Send message →</button>
             </form>
         </div>
     </div>
 
-    <!-- Scripts -->
-    <script src="js/intro-animation.js"></script>
-    <script src="js/main.js"></script>
-
+    <script src="js/redesign.js"></script>
 </body>
 
 </html>

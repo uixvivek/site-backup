@@ -4,18 +4,23 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>How NOT to use AI-Vivek Singh</title>
+    <script>document.documentElement.classList.add('js');</script>
+
+    <title>How NOT to Use AI - Vivek Singh</title>
     <meta name="description"
         content="AI is a tool. But if it replaces your thinking, your design quality quietly collapses." />
 
-    <!-- Google Fonts -->
+    <!-- Fonts: Bricolage Grotesque (display) · Space Mono (labels) · Inter (body) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap"
         rel="stylesheet" />
 
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/redesign.css" />
+
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23ff3d23'/><text x='50%25' y='56%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-weight='800' font-size='19' fill='white'>V</text></svg>" />
 
     <!-- Vercel Analytics -->
     <script defer src="/_vercel/insights/script.js"></script>
@@ -24,44 +29,32 @@
 <body>
 
     <!-- NAVIGATION -->
-    <nav class="nav" id="main-nav" role="navigation" aria-label="Main navigation">
-        <div class="container nav__inner">
-            <a href="index.html" class="nav__logo" aria-label="Go to homepage">vs.</a>
-            <ul class="nav__links" role="list">
+    <nav class="nav" id="main-nav" aria-label="Main navigation">
+        <div class="nav__inner">
+            <a href="index.html" class="nav__logo" aria-label="Vivek Singh - home">vivek<b>.</b></a>
+
+            <ul class="nav__links">
                 <li><a href="index.html" class="nav__link">Home</a></li>
-                <li><a href="work.html" class="nav__link">Work</a></li>
-                <li><a href="blog.html" class="nav__link active">Writing</a></li>
+                <li><a href="index.html#work" class="nav__link">Work</a></li>
+                <li><a href="index.html#writing" class="nav__link active">Writing</a></li>
+                <li><a href="index.html#about" class="nav__link">About</a></li>
                 <li>
-                    <a href="Vivek_Singh_Resume.pdf" download="Vivek_Singh_Resume.pdf" class="btn-primary nav__resume"
-                        aria-label="Download resume PDF">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
-                            aria-hidden="true">
-                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-                            <polyline points="7 10 12 15 17 10" />
-                            <line x1="12" y1="15" x2="12" y2="3" />
-                        </svg>
-                        Resume
-                    </a>
+                    <a href="Vivek_Singh_Resume.pdf" download class="btn btn--solid nav__resume">Résumé ↓</a>
                 </li>
             </ul>
-            <button class="nav__hamburger" id="nav-hamburger" aria-label="Toggle navigation menu" aria-expanded="false"
-                aria-controls="nav-mobile-menu">
-                <span class="nav__hamburger-bar"></span>
-                <span class="nav__hamburger-bar"></span>
-                <span class="nav__hamburger-bar"></span>
+
+            <button class="nav__hamburger" id="nav-hamburger" aria-label="Toggle menu" aria-expanded="false"
+                aria-controls="nav-mobile">
+                <span></span><span></span><span></span>
             </button>
         </div>
-        <div class="nav__mobile-menu" id="nav-mobile-menu" role="menu">
-            <a href="index.html" class="nav__mobile-link" role="menuitem">Home</a>
-            <a href="work.html" class="nav__mobile-link" role="menuitem">Work</a>
-            <a href="blog.html" class="nav__mobile-link" role="menuitem">Writing</a>
-            <div class="nav__mobile-resume">
-                <a href="Vivek_Singh_Resume.pdf" download="Vivek_Singh_Resume.pdf" class="btn-primary nav__mobile-link"
-                    style="justify-content:center;" role="menuitem">
-                    Download Resume
-                </a>
-            </div>
+
+        <div class="nav__mobile" id="nav-mobile">
+            <a href="index.html">Home</a>
+            <a href="index.html#work">Work</a>
+            <a href="index.html#writing">Writing</a>
+            <a href="index.html#about">About</a>
+            <a href="Vivek_Singh_Resume.pdf" download class="btn btn--solid">Download résumé ↓</a>
         </div>
     </nav>
 
@@ -162,7 +155,7 @@
                 <p><strong>AI sounds robotic. Trust dies fast.</strong></p>
 
                 <p>Microcopy is small, but it's where trust is built.
-                    Buttons, error messages, confirmations, empty states —
+                    Buttons, error messages, confirmations, empty states -
                     these tiny lines decide whether the product feels human or cold.</p>
 
                 <p>AI microcopy usually sounds generic, overly polite, and emotionally empty.
@@ -189,7 +182,7 @@
                 <p><strong>AI makes good UI. Not your identity.</strong></p>
 
                 <p>AI can generate "clean UI" instantly. But that's the problem.
-                    It gives you something modern, safe, and acceptable —
+                    It gives you something modern, safe, and acceptable -
                     but also completely forgettable.</p>
 
                 <p>And if you keep using it for visuals, you stop building your own taste.</p>
@@ -253,14 +246,87 @@
         </div>
     </section>
 
-    <!-- FOOTER -->
-    <footer class="footer">
-        <div class="container" style="text-align: center;">
-            &copy; 2026 Vivek Singh. All rights reserved.
+    <!-- ====================================================================
+         FOOTER / CONTACT
+    ===================================================================== -->
+    <footer class="section footer" id="contact">
+        <div class="wrap">
+            <span class="eyebrow">Contact</span>
+            <h2 class="display footer__cta">
+                Let's build something <a href="#" id="open-contact-modal-2">worth shipping.</a>
+            </h2>
+
+            <div class="footer__row">
+                <div class="footer__socials">
+                    <a href="https://www.linkedin.com/in/uixvivek" target="_blank" rel="noopener" aria-label="LinkedIn">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                            <rect x="2" y="9" width="4" height="12" />
+                            <circle cx="4" cy="4" r="2" />
+                        </svg>
+                    </a>
+                    <a href="https://x.com/uix_vivek" target="_blank" rel="noopener" aria-label="X (Twitter)">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M4 4l11.733 16h4.267l-11.733 -16z" />
+                            <path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772" />
+                        </svg>
+                    </a>
+                    <a href="https://www.instagram.com/uixvivek/" target="_blank" rel="noopener" aria-label="Instagram">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                        </svg>
+                    </a>
+                    <a href="mailto:hello@uixvivek.in" aria-label="Email">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect width="20" height="16" x="2" y="4" rx="2" />
+                            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                        </svg>
+                    </a>
+                </div>
+                <span class="footer__meta">© 2026 Vivek Singh · Designed &amp; built in New Delhi</span>
+            </div>
         </div>
     </footer>
 
-    <script src="js/main.js"></script>
+    <!-- ====================================================================
+         CONTACT MODAL
+    ===================================================================== -->
+    <div class="modal-overlay" id="contact-modal" aria-hidden="true">
+        <div class="modal" role="dialog" aria-labelledby="modal-title" aria-modal="true">
+            <div class="modal__head">
+                <div>
+                    <h3 id="modal-title" class="modal__title">Say hi</h3>
+                    <p class="modal__sub">// replies within a day or two</p>
+                </div>
+                <button class="modal__close" id="close-contact-modal" aria-label="Close">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="18" y1="6" x2="6" y2="18" />
+                        <line x1="6" y1="6" x2="18" y2="18" />
+                    </svg>
+                </button>
+            </div>
+            <form action="https://formspree.io/f/xeelogpj" method="POST">
+                <div class="field">
+                    <label for="c-email">Your email</label>
+                    <input type="email" id="c-email" name="email" placeholder="you@example.com" required />
+                </div>
+                <div class="field">
+                    <label for="c-message">Message</label>
+                    <textarea id="c-message" name="message" placeholder="What are you building?" required></textarea>
+                </div>
+                <button type="submit" class="btn btn--solid" style="width:100%;">Send message →</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/redesign.js"></script>
 </body>
 
 </html>
